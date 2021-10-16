@@ -1,0 +1,41 @@
+{
+  "home": "Home",
+  "products": "Products",
+  "services": "Services",
+  "shop": "Shop",
+  "contact": "Contact",
+  "about": "About",
+  "certifications": "Certifications",
+  "home_link": "/en",
+  "products_link": "/en/products",
+  "services_link": "/en/services",
+  "shop_link": "/en/shop",
+  "about_link": "/en/about",
+  "contact_link": "/en/contact",
+  "certifications_link": "/en/certifications",
+  "prototypes_link": "en/services/#prototypes",
+  "modernization_link": "en/services/#modernization",
+
+  "medicine": "medicine",
+  "farmacology": "farmacology",
+  "food-industry": "food industry",
+  "laboratories": "laboratories",
+  "engineering": "engineering",
+
+  "our-offer": "Our offer:",
+  "prototypes": "Prototypes",
+  "find-out-more": "Find out more",
+  "our-team": "Get to know our team",
+
+  "shop-products": "See our products",
+  "here": "here",
+
+  "contact-us": "Contact us",
+  "name-and-surname": "name and surname",
+  "your-message": "your message",
+  "send": "send",
+
+  "modernization": "Modernization of devices",
+  "prototypes-dev": "Development and construction of prototypes",
+  "tools-marking": "Marking of surgical instruments"
+}

@@ -1,0 +1,41 @@
+{
+  "home": "Strona Główna",
+  "products": "Produkty",
+  "services": "Usługi",
+  "shop": "Sklep",
+  "contact": "Kontakt",
+  "about": "O nas",
+  "certifications": "Certtyfikaty",
+  "home_link": "/",
+  "products_link": "/products/",
+  "services_link": "/services/",
+  "shop_link": "/shop/",
+  "about_link": "/about/",
+  "contact_link": "/contact/",
+  "certification_link": "/certifications/",
+  "prototypes_link": "/services/#prototypes",
+  "modernization_link": "/services/#modernization",
+
+  "medicine": "medycyna",
+  "farmacology": "farmakologia",
+  "food-industry": "przemysł spożywczy",
+  "laboratories": "laboratoria",
+  "engineering": "inżynieria",
+
+  "our-offer": "Nasza oferta:",
+  "prototypes": "Prototypy",
+  "find-out-more": "Dowiedz się więcej",
+  "our-team": "Poznaj nasz zespół",
+
+  "shop-products": "Zobacz nasze produkty",
+  "here": "tutaj",
+
+  "contact-us": "Skontaktuj się z nami",
+  "name-and-surname": "imię i nazwisko",
+  "your-message": "twoja wiadomość",
+  "send": "wyślij",
+
+  "modernization": "Modernizacja urządzeń",
+  "prototypes-dev": "Opracowanie i konstrukcja prototypów",
+  "tools-marking": "Znakowanie narzędzi chirurgicznych"
+}
