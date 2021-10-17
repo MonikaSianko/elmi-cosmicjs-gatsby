@@ -1,26 +1,31 @@
 import styled from "styled-components"
-import { colors } from "../../constants/contants"
+import { colors, fontSize, fontWeight, spaces } from "../../constants/contants"
 
 export const GenericWrapper = styled.div`
-  max-width: 1200px;
+  max-width: 1240px;
   height: 100%;
-  padding: 0 2rem;
+  padding: 0 ${spaces.xxl};
   margin: 0 auto;
-  font-family: "Work Sans", sans-serif;
+  font-family: "Ubuntu", sans-serif;
   h1 {
-    font-size: 42px;
-    font-weight: 800;
+    font-size: ${fontSize.xxl};
+    font-weight: ${fontWeight.bold};
   }
   h2 {
     font-size: 24px;
   }
+  h3 {
+    color: ${colors.secondaryBlue};
+    font-size: ${fontSize.l};
+  }
   p {
-    font-size: 16px;
+    font-size: ${fontSize.s};
+    font-weight: ${fontWeight.light};
+    line-height: 2em;
   }
   a {
-    font-size: 14px;
+    font-size: ${fontSize.xs};
     text-decoration: none;
     cursor: pointer;
-    color: ${colors.richBlack};
   }
 `

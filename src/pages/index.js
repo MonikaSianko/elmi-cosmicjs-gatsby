@@ -3,17 +3,30 @@ import { graphql } from "gatsby"
 import "../components/reset.css"
 
 import Footer from "../components/Layout/Footer/index"
-import Hero from "../components/Home/Hero/Hero"
 import Header from "../components/Shared/Menu/Header"
+import Hero from "../components/Boxes/BoxHero/BoxHero"
+import Navigation from "../components/Shared/Navigation/Navigation"
+import Specialization from "../components/Boxes/BoxSpecialization/BoxSpecialization"
+import Contact from "../components/Boxes/BoxContact/BoxContact"
 
 export default function HomePage({ data }) {
-  const hero = data.allCosmicjsHome.nodes[0].metadata.section_hero
   const variables = data.allCosmicjsGlobalVariables.nodes[0]
+  const hero = data.allCosmicjsHome.nodes[0].metadata.section_hero
+  const industries =
+    data.allCosmicjsHome.nodes[0].metadata.section_industries.data
+  const findOutMore =
+    data.allCosmicjsHome.nodes[0].metadata.section_find_out_more.data
+  const specialization =
+    data.allCosmicjsHome.nodes[0].metadata.section_specialization
+  const contact = data.allCosmicjsHome.nodes[0].metadata.section_contact.data[0]
 
   return (
     <>
       <Header variables={variables} />
-      <Hero data={hero} />
+      <Hero data={hero} industries={industries} />
+      <Navigation data={findOutMore} />
+      <Specialization data={specialization} />
+      <Contact data={contact} />
       <Footer />
     </>
   )
@@ -32,17 +45,43 @@ export const query = graphql`
             secondary_btn_link
             secondary_btn_text
             secondary_text
+            image {
+              imgix_url
+            }
           }
           section_industries {
-            names
+            data {
+              icon
+              title
+            }
+          }
+          section_find_out_more {
+            data {
+              btnLink
+              btnText
+              icon
+              title
+              id
+            }
           }
           section_specialization {
             description
+            image {
+              alt
+              url
+            }
           }
           section_contact {
-            address
-            email
-            phone
+            data {
+              address
+              email
+              email_text
+              map_url
+              name_text
+              phone
+              send
+              your_message
+            }
           }
         }
       }
@@ -60,55 +99,3 @@ export const query = graphql`
     }
   }
 `
-
-// export const query = graphql`
-//   query MyQuery($language: String) {
-//     allContentfulHero(filter: { node_locale: { eq: $language } }) {
-//       nodes {
-//         buttonPrimaryText
-//         buttonSecondaryText
-//         buttonSecondaryLink
-//         buttonPrimaryLink
-//         largeText
-//         smallText
-//         node_locale
-//       }
-//     }
-// //     allContentfulSpecialization(filter: { node_locale: { eq: $language } }) {
-// //       nodes {
-// //         firstText {
-// //           childMarkdownRemark {
-// //             html
-// //           }
-// //         }
-// //         secondText {
-// //           childMarkdownRemark {
-// //             html
-// //           }
-// //         }
-// //         image {
-// //           title
-// //           file {
-// //             url
-// //           }
-// //         }
-// //         node_locale
-// //       }
-// //     }
-// //     allContentfulAbout(filter: { node_locale: { eq: $language } }) {
-// //       nodes {
-// //         node_locale
-// //         buttonPrimaryLink
-// //         buttonPrimaryText
-// //         buttonSecondaryText
-// //         buttonSecondaryLink
-// //         title
-// //         description {
-// //           childMarkdownRemark {
-// //             html
-// //           }
-// //         }
-// //       }
-// //     }
-// //   }
-// // `

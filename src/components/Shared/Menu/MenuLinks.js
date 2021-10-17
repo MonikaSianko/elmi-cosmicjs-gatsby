@@ -5,8 +5,8 @@ const MenuLinks = variables => {
   console.log(data)
   return (
     <ul className="menu-links">
-      {data.map(({ text, href }) => (
-        <li key={text}>
+      {data.map(({ text, href, id }) => (
+        <li key={id}>
           <a href={href}>{text}</a>
         </li>
       ))}

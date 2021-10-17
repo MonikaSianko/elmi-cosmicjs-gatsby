@@ -2,7 +2,7 @@ import styled from "styled-components"
 import { breakpoints } from "../utils/breakpoints"
 import * as palette from "../utils/styles"
 
-export const ContactWrapper = styled.div`
+export const StyledContactWrapper = styled.div`
   height: 100%;
 `
 

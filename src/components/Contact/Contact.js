@@ -1,6 +1,6 @@
 import React from "react"
 
-import { ContactBox, ContactWrapper } from "./ContactStyles"
+import { ContactBox, StyledContactWrapper } from "./ContactStyles"
 import { Container } from "../GlobalStyles/globalStyles"
 
 import Info from "./Info/index"
@@ -9,7 +9,7 @@ import Map from "./Map/index"
 
 function Contact({ email, address, phone }) {
   return (
-    <ContactWrapper style={{ overflow: "hidden" }}>
+    <StyledContactWrapper style={{ overflow: "hidden" }}>
       <Container>
         <ContactBox>
           <Map />
@@ -17,7 +17,7 @@ function Contact({ email, address, phone }) {
         </ContactBox>
         <Info email={email} phone={phone} address={address} />
       </Container>
-    </ContactWrapper>
+    </StyledContactWrapper>
   )
 }
 

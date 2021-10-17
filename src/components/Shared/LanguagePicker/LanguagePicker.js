@@ -3,7 +3,7 @@ import { IntlContextConsumer, changeLocale } from "gatsby-plugin-react-intl"
 
 import { GoGlobe } from "react-icons/go"
 import { BiChevronDown } from "react-icons/bi"
-import { StyledLanguagePicker } from "../Menu/Menu.styled"
+import { StyledLanguagePicker } from "./LanguagePicker.styled"
 
 const languageName = {
   en: "English",
@@ -17,15 +17,10 @@ function LanguagePicker({ burgerState }) {
   }
 
   return (
-    <StyledLanguagePicker>
+    <StyledLanguagePicker isOpen={isOpen}>
       <div className="icons-box">
-        <GoGlobe />
-        <BiChevronDown
-          onClick={hanldeOpen}
-          style={{
-            transform: [{ rotate: isOpen ? "180deg" : "0deg" }],
-          }}
-        />
+        <GoGlobe className="globe" />
+        <BiChevronDown onClick={hanldeOpen} className="arrow" />
       </div>
       {isOpen ? (
         <div className="dropdown">

@@ -6,6 +6,7 @@ export const StyledHeader = styled.header`
   position: fixed;
   border-bottom: ${borders.blue};
   z-index: ${zIndex.absolute};
+  background-color: ${colors.white};
   .header-wrapper {
     display: flex;
     justify-content: space-between;
@@ -31,15 +32,12 @@ export const StyledHeader = styled.header`
         display: flex;
         align-items: center;
         &:hover {
-          background-color: ${colors.aliceBlue};
+          background-color: ${colors.lightBlue};
         }
         a {
-          &:hover {
-            color: ${colors.prussianBlue};
-          }
+          color: ${colors.text};
         }
       }
     }
   }
 `
-export const StyledLanguagePicker = styled.div``
