@@ -1,5 +1,6 @@
 import styled from "styled-components"
 import {
+  breakpointsMax,
   colors,
   fontSize,
   fontWeight,
@@ -13,12 +14,13 @@ export const GenericWrapper = styled.div`
   margin: 0 auto;
   font-family: "Roboto", sans-serif;
   color: ${colors.text};
+  overflow-x: hidden;
   h1 {
     font-size: ${fontSize.xxxl};
     font-weight: ${fontWeight.regular};
   }
   h2 {
-    font-size: 24px;
+    font-size: ${fontSize.l};
   }
   h3 {
     color: ${colors.primaryBlue};
@@ -34,5 +36,21 @@ export const GenericWrapper = styled.div`
     font-size: ${fontSize.xs};
     text-decoration: none;
     cursor: pointer;
+  }
+  @media ${breakpointsMax.md} {
+    padding: 0 ${spaces.m};
+  }
+  h1 {
+    font-size: ${fontSize.xl};
+  }
+  h2 {
+    font-size: ${fontSize.m};
+  }
+  h3 {
+    font-size: ${fontSize.s};
+  }
+  p,
+  a {
+    font-size: ${fontSize.xs};
   }
 `

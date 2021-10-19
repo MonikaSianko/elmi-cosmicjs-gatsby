@@ -1,6 +1,7 @@
 import styled from "styled-components"
 import {
   breakpointsMax,
+  breakpointsMin,
   colors,
   radius,
   spaces,
@@ -8,9 +9,11 @@ import {
 
 export const StyledHeroWrapper = styled.section`
   height: 100%;
-  overflow-y: hidden;
+
 
   .generic-wrapper {
+    padding-top: 100px;
+    @media ${breakpointsMin.l}{ 
     padding-top: 150px;
     padding-bottom: 50px;
     position: relative;
@@ -27,7 +30,9 @@ export const StyledHeroWrapper = styled.section`
       border-radius: ${radius.button};
     }
   }
+  }
   .content-box {
+    @media ${breakpointsMin.l}{
     padding-left: ${spaces.l};
     position: relative;
     ::before {
@@ -40,7 +45,8 @@ export const StyledHeroWrapper = styled.section`
       background: ${colors.borderGradient};
     }
   }
-  .hero-image {
+  }
+  .hero-image-desktop {
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -49,8 +55,28 @@ export const StyledHeroWrapper = styled.section`
     position: absolute;
     z-index: -1;
     bottom: 30%;
-    right: 3%;
+    right: 3%;}
   }
+  .hero-image-mobile-wrapper{
+    position: relative;
+    ::after {
+      content: "";
+      width: 120%;
+      height: 80%;
+      background-color: ${colors.text};
+      position: absolute;
+      bottom: 3px;
+      left: 0;
+      z-index: -5;
+      border-radius: ${radius.button};
+    }
+  }
+  .hero-image-mobile {
+    height: auto;
+    width: 90%;
+    margin-top: ${spaces.m};
+  }
+
   .text {
     width: 55%;
     padding-bottom: ${spaces.xxl};
@@ -63,5 +89,15 @@ export const StyledHeroWrapper = styled.section`
     p {
       padding-top: 60px;
     }
+    @media ${breakpointsMax.m}{
+      width: 100%;
+      padding-bottom: ${spaces.xxl};
+    h3 {
+      padding-top: ${spaces.m};
+    }
+    p {
+      padding-top: ${spaces.m};
+    }
+    
   }
 `

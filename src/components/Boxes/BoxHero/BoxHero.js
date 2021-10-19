@@ -4,6 +4,8 @@ import ButtonsBox from "../../Shared/Buttons/ButtonsBox"
 
 import BoxIndustries from "../BoxIndustries/BoxIndustries"
 import { GenericWrapper } from "../../Shared/Generic/Generic.styles"
+import { breakpointsMax } from "../../../constants/contants"
+import { useMediaQuery } from "react-responsive"
 
 export default function Hero({ data, industries }) {
   const {
@@ -16,15 +18,22 @@ export default function Hero({ data, industries }) {
     image,
     description,
   } = data
-
+  const isMobile = useMediaQuery({ query: breakpointsMax.m })
   return (
     <StyledHeroWrapper>
       <GenericWrapper className="generic-wrapper">
-        <img src={image.imgix_url} className="hero-image" />
+        {!isMobile && (
+          <img src={image.imgix_url} className="hero-image-desktop" />
+        )}
         <div className="content-box">
           <div className="text">
             <h1>{primary_text}</h1>
             <h3>{secondary_text}</h3>
+            {isMobile && (
+              <div className="hero-image-mobile-wrapper">
+                <img src={image.imgix_url} className="hero-image-mobile" />
+              </div>
+            )}
             <div
               dangerouslySetInnerHTML={{ __html: description }}
               className="description"
