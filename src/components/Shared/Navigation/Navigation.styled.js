@@ -12,13 +12,13 @@ import { FiArrowDownCircle } from "react-icons/fi"
 import { primaryBlue } from "../../utils/styles"
 
 export const StyledNavigationWrapper = styled.div`
-  border-bottom: ${borders.blue};
   padding: 85px 0;
   background-color: ${colors.lightGrey};
   .generic-wrapper {
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
+    width: 70%;
   }
 `
 

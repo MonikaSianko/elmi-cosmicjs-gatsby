@@ -1,8 +1,9 @@
 import * as React from "react"
 import { StyledHeroWrapper } from "./BoxHero.styled"
 import ButtonsBox from "../../Shared/Buttons/ButtonsBox"
-import { GenericWrapper } from "../../Generic/Generic.styles"
+
 import BoxIndustries from "../BoxIndustries/BoxIndustries"
+import { GenericWrapper } from "../../Shared/Generic/Generic.styles"
 
 export default function Hero({ data, industries }) {
   const {
@@ -13,6 +14,7 @@ export default function Hero({ data, industries }) {
     secondary_btn_link,
     secondary_btn_text,
     image,
+    description,
   } = data
 
   return (
@@ -23,6 +25,10 @@ export default function Hero({ data, industries }) {
           <div className="text">
             <h1>{primary_text}</h1>
             <h3>{secondary_text}</h3>
+            <div
+              dangerouslySetInnerHTML={{ __html: description }}
+              className="description"
+            ></div>
           </div>
           <ButtonsBox
             primary_href={primary_btn_link}

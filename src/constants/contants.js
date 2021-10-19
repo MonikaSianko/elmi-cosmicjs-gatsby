@@ -47,6 +47,7 @@ export const fontSize = {
   l: "24px",
   xl: "36px",
   xxl: "42px",
+  xxxl: "46px",
 }
 
 export const fontWeight = {
@@ -63,7 +64,7 @@ export const spaces = {
   m: "20px",
   l: "25px",
   xl: "30px",
-  xxl: "35px",
+  xxl: "40px",
 }
 
 export const radius = {

@@ -1,11 +1,12 @@
 import React, { memo } from "react"
-import { GenericWrapper } from "../../Generic/Generic.styles"
+
 import LanguagePicker from "../LanguagePicker/LanguagePicker"
 import { StyledHeader } from "./Menu.styled"
 import MenuLinks from "./MenuLinks"
-import logo from "../../../assets/elmi-logo.png"
+import { GenericWrapper } from "../Generic/Generic.styles"
 
 const Header = variables => {
+  const logo = variables.variables.metadata.logo.imgix_url
   return (
     <StyledHeader>
       <GenericWrapper>

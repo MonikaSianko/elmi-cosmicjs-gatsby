@@ -1,5 +1,6 @@
 import React, { memo } from "react"
-import { GenericWrapper } from "../../Generic/Generic.styles"
+import { GenericWrapper } from "../Generic/Generic.styles"
+
 import { ArrowDown, Card, StyledNavigationWrapper } from "./Navigation.styled"
 
 const Navigation = ({ data }) => {

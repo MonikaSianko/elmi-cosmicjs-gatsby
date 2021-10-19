@@ -1,15 +1,31 @@
 import styled from "styled-components"
-import { breakpointsMax, colors, spaces } from "../../../constants/contants"
+import {
+  breakpointsMax,
+  colors,
+  radius,
+  spaces,
+} from "../../../constants/contants"
 
 export const StyledHeroWrapper = styled.section`
   height: 100%;
   overflow-y: hidden;
 
   .generic-wrapper {
-    padding-top: 190px;
-    padding-bottom: 95px;
+    padding-top: 150px;
+    padding-bottom: 50px;
     position: relative;
     height: 100%;
+    ::after {
+      content: "";
+      width: 40%;
+      height: 50%;
+      background-color: ${colors.text};
+      position: absolute;
+      bottom: 30%;
+      right: 0;
+      z-index: -5;
+      border-radius: ${radius.button};
+    }
   }
   .content-box {
     padding-left: ${spaces.l};
@@ -29,20 +45,23 @@ export const StyledHeroWrapper = styled.section`
     background-repeat: no-repeat;
     background-size: cover;
     width: auto;
-    height: 100%;
+    height: 55%;
     position: absolute;
-    z-index: -3;
-    top: 60px;
-    right: 0;
+    z-index: -1;
+    bottom: 30%;
+    right: 3%;
   }
   .text {
-    width: 60%;
+    width: 55%;
     padding-bottom: ${spaces.xxl};
     h1 {
       color: ${colors.text};
     }
     h3 {
-      padding-top: ${spaces.xs};
+      padding-top: ${spaces.m};
+    }
+    p {
+      padding-top: 60px;
     }
   }
 `

@@ -90,7 +90,7 @@ module.exports = {
       resolve: `gatsby-plugin-google-fonts`,
       options: {
         fonts: [
-          `ubuntu`, // you can also specify font weights and styles
+          `roboto`, // you can also specify font weights and styles
         ],
         display: "swap",
       },

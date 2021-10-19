@@ -2,12 +2,12 @@ import React from "react"
 import { graphql } from "gatsby"
 import "../components/reset.css"
 
-import Footer from "../components/Layout/Footer/index"
 import Header from "../components/Shared/Menu/Header"
 import Hero from "../components/Boxes/BoxHero/BoxHero"
 import Navigation from "../components/Shared/Navigation/Navigation"
 import Specialization from "../components/Boxes/BoxSpecialization/BoxSpecialization"
 import Contact from "../components/Boxes/BoxContact/BoxContact"
+import Footer from "../components/Shared/Footer/Footer"
 
 export default function HomePage({ data }) {
   const variables = data.allCosmicjsGlobalVariables.nodes[0]
@@ -27,7 +27,7 @@ export default function HomePage({ data }) {
       <Navigation data={findOutMore} />
       <Specialization data={specialization} />
       <Contact data={contact} />
-      <Footer />
+      <Footer variables={variables} />
     </>
   )
 }
@@ -45,6 +45,7 @@ export const query = graphql`
             secondary_btn_link
             secondary_btn_text
             secondary_text
+            description
             image {
               imgix_url
             }
@@ -66,6 +67,7 @@ export const query = graphql`
           }
           section_specialization {
             description
+
             image {
               alt
               url
@@ -74,11 +76,14 @@ export const query = graphql`
           section_contact {
             data {
               address
+              email_icon
               email
               email_text
+              localization_icon
               map_url
               name_text
               phone
+              phone_icon
               send
               your_message
             }
@@ -89,9 +94,19 @@ export const query = graphql`
     allCosmicjsGlobalVariables(filter: { locale: { eq: $language } }) {
       nodes {
         metadata {
-          links {
+          header_links {
+            id
             href
             text
+          }
+          footer_links {
+            id
+            href
+            text
+            icon
+          }
+          logo {
+            imgix_url
           }
         }
         locale

@@ -1,6 +1,7 @@
 import React from "react"
-import { GenericWrapper } from "../../Generic/Generic.styles"
+
 import Form from "../../Shared/Form/Form"
+import { GenericWrapper } from "../../Shared/Generic/Generic.styles"
 import { StyledContactWrapper } from "./BoxContact.styled"
 
 function Contact({ data }) {

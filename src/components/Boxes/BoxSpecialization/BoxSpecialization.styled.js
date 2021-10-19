@@ -1,5 +1,5 @@
 import styled from "styled-components"
-import { colors, radius, spaces } from "../../../constants/contants"
+import { colors, fontWeight, radius, spaces } from "../../../constants/contants"
 
 //helpers
 import { breakpoints } from "../../utils/breakpoints"
@@ -26,14 +26,15 @@ export const StyledSpecializationWrapper = styled.div`
         content: "";
         position: absolute;
         width: ${spaces.xs};
-        height: 120%;
-        top: -10%;
+        height: 100%;
+        top: 0;
         left: -${spaces.m};
         background: ${colors.borderGradient};
       }
-      > strong {
-        color: ${colors.primaryBlue};
-      }
+    }
+    span,
+    strong {
+      font-weight: ${fontWeight.light};
     }
   }
 `

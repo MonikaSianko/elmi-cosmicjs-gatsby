@@ -3,6 +3,8 @@ import { colors, fontWeight, spaces } from "../../../constants/contants"
 
 export const StyledIndustries = styled.div`
   display: flex;
+  justify-content: space-between;
+  width: 80%;
   padding-top: 40px;
   .industry-box {
     display: flex;
