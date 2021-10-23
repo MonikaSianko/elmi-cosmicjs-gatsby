@@ -18,18 +18,18 @@ export default function Hero({ data, industries }) {
     image,
     description,
   } = data
-  const isMobile = useMediaQuery({ query: breakpointsMax.m })
+  const isTablet = useMediaQuery({ query: breakpointsMax.m })
   return (
     <StyledHeroWrapper>
       <GenericWrapper className="generic-wrapper">
-        {!isMobile && (
+        {!isTablet && (
           <img src={image.imgix_url} className="hero-image-desktop" />
         )}
         <div className="content-box">
           <div className="text">
             <h1>{primary_text}</h1>
             <h3>{secondary_text}</h3>
-            {isMobile && (
+            {isTablet && (
               <div className="hero-image-mobile-wrapper">
                 <img src={image.imgix_url} className="hero-image-mobile" />
               </div>
@@ -46,7 +46,7 @@ export default function Hero({ data, industries }) {
             secondary_text={secondary_btn_text}
           />
         </div>
-        <BoxIndustries data={industries} />
+        {!isTablet && <BoxIndustries data={industries} />}
       </GenericWrapper>
     </StyledHeroWrapper>
   )

@@ -10,41 +10,47 @@ import {
 export const StyledHeroWrapper = styled.section`
   height: 100%;
 
-
   .generic-wrapper {
     padding-top: 100px;
-    @media ${breakpointsMin.l}{ 
-    padding-top: 150px;
-    padding-bottom: 50px;
-    position: relative;
-    height: 100%;
-    ::after {
-      content: "";
-      width: 40%;
-      height: 50%;
-      background-color: ${colors.text};
-      position: absolute;
-      bottom: 30%;
-      right: 0;
-      z-index: -5;
-      border-radius: ${radius.button};
+    @media ${breakpointsMin.l} {
+      padding-top: 150px;
+      padding-bottom: 50px;
+      position: relative;
+      height: 100%;
+      ::after {
+        content: "";
+        width: 40%;
+        height: 50%;
+        background-color: ${colors.text};
+        position: absolute;
+        bottom: 30%;
+        right: 0;
+        z-index: -5;
+        border-radius: ${radius.button};
+      }
     }
-  }
+    @media ${breakpointsMax.l} {
+      background: ${colors.whiteGradient};
+      width: 100%;
+    }
+    @media ${breakpointsMax.m} {
+      background: transparent;
+    }
   }
   .content-box {
-    @media ${breakpointsMin.l}{
-    padding-left: ${spaces.l};
-    position: relative;
-    ::before {
-      content: "";
-      position: absolute;
-      width: ${spaces.xs};
-      height: 100%;
-      top: 0;
-      left: 0;
-      background: ${colors.borderGradient};
+    @media ${breakpointsMin.l} {
+      padding-left: ${spaces.l};
+      position: relative;
+      ::before {
+        content: "";
+        position: absolute;
+        width: ${spaces.xs};
+        height: 100%;
+        top: 0;
+        left: 0;
+        background: ${colors.borderGradient};
+      }
     }
-  }
   }
   .hero-image-desktop {
     background-position: center;
@@ -55,9 +61,9 @@ export const StyledHeroWrapper = styled.section`
     position: absolute;
     z-index: -1;
     bottom: 30%;
-    right: 3%;}
+    right: 3%;
   }
-  .hero-image-mobile-wrapper{
+  .hero-image-mobile-wrapper {
     position: relative;
     ::after {
       content: "";
@@ -89,15 +95,34 @@ export const StyledHeroWrapper = styled.section`
     p {
       padding-top: 60px;
     }
-    @media ${breakpointsMax.m}{
+  }
+
+  @media ${breakpointsMax.m} {
+    padding-bottom: ${spaces.xxl};
+    .text {
       width: 100%;
-      padding-bottom: ${spaces.xxl};
-    h3 {
-      padding-top: ${spaces.m};
+      padding-bottom: ${spaces.m};
+      h3 {
+        padding-top: ${spaces.xs};
+      }
+      p {
+        padding-top: ${spaces.s};
+      }
     }
-    p {
-      padding-top: ${spaces.m};
+  }
+
+  @media ${breakpointsMax.s} {
+    .btns-box {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      .btn-primary {
+        margin-bottom: ${spaces.m};
+      }
+      .btn-primary,
+      .btn-secondary {
+        width: 100%;
+      }
     }
-    
   }
 `

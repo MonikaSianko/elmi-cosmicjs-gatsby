@@ -1,5 +1,6 @@
 export const breakpointsMax = {
-  s: `(max-width: 380px)`,
+  xs: `(max-width: 380px)`,
+  s: `(max-width: 520px)`,
   m: `(max-width: 720px)`,
   l: `(max-width: 1024px)`,
   xl: `(max-width: 1536px)`,
@@ -21,6 +22,8 @@ export const borders = {
 export const colors = {
   text: "#343A3D",
   white: "#FFFFFF",
+  whiteGradient:
+    "linear-gradient(90.12deg, rgba(255, 255, 255, 0.7) 21.94%, rgba(255, 255, 255, 0.567) 66.39%, rgba(255, 255, 255, 0) 94.07%)",
   lightGrey: "#F5F5F5",
   lightBlue: "#EDF6FD",
   lightBlueHue: "rgba(237, 246, 253, 0.5)",
@@ -65,6 +68,7 @@ export const spaces = {
   l: "25px",
   xl: "30px",
   xxl: "40px",
+  xxxl: "60px",
 }
 
 export const radius = {

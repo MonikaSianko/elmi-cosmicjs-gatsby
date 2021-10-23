@@ -30,7 +30,7 @@ export const Card = styled.div`
   flex-direction: column;
   align-items: center;
   border-radius: ${radius.m};
-  padding: ${spaces.xxl} ${spaces.l};
+  padding: ${spaces.xxl} ${spaces.xxl};
   margin: 0 ${spaces.xl};
   width: 15em;
   text-align: center;
@@ -42,8 +42,8 @@ export const Card = styled.div`
     padding: ${spaces.s} 0;
   }
   img {
-    width: 5em;
-    height: 5em;
+    width: 8em;
+    height: 8em;
   }
   .with-text {
     border: ${borders.blue};

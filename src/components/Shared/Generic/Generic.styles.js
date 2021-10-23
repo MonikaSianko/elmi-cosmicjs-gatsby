@@ -27,30 +27,32 @@ export const GenericWrapper = styled.div`
     font-size: ${fontSize.m};
     font-weight: ${fontWeight.light};
   }
+
   p {
     font-size: ${fontSize.s};
     font-weight: ${fontWeight.light};
     line-height: 2em;
   }
   a {
-    font-size: ${fontSize.xs};
+    font-size: ${fontSize.s};
     text-decoration: none;
     cursor: pointer;
   }
-  @media ${breakpointsMax.md} {
+  @media ${breakpointsMax.s} {
     padding: 0 ${spaces.m};
-  }
-  h1 {
-    font-size: ${fontSize.xl};
-  }
-  h2 {
-    font-size: ${fontSize.m};
-  }
-  h3 {
-    font-size: ${fontSize.s};
-  }
-  p,
-  a {
-    font-size: ${fontSize.xs};
+
+    h1 {
+      font-size: ${fontSize.l};
+    }
+    h2 {
+      font-size: ${fontSize.m};
+    }
+    h3 {
+      font-size: ${fontSize.xs};
+    }
+    p,
+    a {
+      font-size: ${fontSize.xs};
+    }
   }
 `

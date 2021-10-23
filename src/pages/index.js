@@ -8,9 +8,12 @@ import Navigation from "../components/Shared/Navigation/Navigation"
 import Specialization from "../components/Boxes/BoxSpecialization/BoxSpecialization"
 import Contact from "../components/Boxes/BoxContact/BoxContact"
 import Footer from "../components/Shared/Footer/Footer"
+import SlickSlider from "../components/Shared/Slider/SlickSlider"
+import { useMediaQuery } from "react-responsive"
+import { breakpointsMax } from "../constants/contants"
 
 export default function HomePage({ data }) {
-  const variables = data.allCosmicjsGlobalVariables.nodes[0]
+  const global_variables = data.allCosmicjsGlobalVariables.nodes[0].metadata
   const hero = data.allCosmicjsHome.nodes[0].metadata.section_hero
   const industries =
     data.allCosmicjsHome.nodes[0].metadata.section_industries.data
@@ -19,15 +22,50 @@ export default function HomePage({ data }) {
   const specialization =
     data.allCosmicjsHome.nodes[0].metadata.section_specialization
   const contact = data.allCosmicjsHome.nodes[0].metadata.section_contact.data[0]
+  const partners_slider =
+    data.allCosmicjsHome.nodes[0].metadata.partners_slider.metadata.partners
 
+  const isMobile = useMediaQuery({ query: breakpointsMax.s })
+  const isTablet = useMediaQuery({ query: breakpointsMax.m })
+  console.log(partners_slider)
   return (
     <>
-      <Header variables={variables} />
+      <Header data={global_variables} />
       <Hero data={hero} industries={industries} />
+      {isTablet && (
+        <SlickSlider
+          content={industries}
+          settings={{
+            dots: false,
+            infinite: true,
+            speed: 500,
+            slidesToShow: isMobile ? 2 : 3,
+            slidesToScroll: 2,
+            centerMode: true,
+            autoplay: true,
+            speed: 600,
+          }}
+          className="industries"
+          withTitle
+        />
+      )}
       <Navigation data={findOutMore} />
       <Specialization data={specialization} />
+      <SlickSlider
+        settings={{
+          dots: true,
+          infinite: true,
+          speed: 500,
+          slidesToShow: 3,
+          slidesToScroll: 2,
+          autoplay: true,
+          speed: 400,
+        }}
+        content={partners_slider}
+        className="partners"
+      />
       <Contact data={contact} />
-      <Footer variables={variables} />
+      <Footer data={global_variables} />
     </>
   )
 }
@@ -73,6 +111,15 @@ export const query = graphql`
               url
             }
           }
+          partners_slider {
+            metadata {
+              partners {
+                icon
+                id
+                title
+              }
+            }
+          }
           section_contact {
             data {
               address
@@ -94,12 +141,7 @@ export const query = graphql`
     allCosmicjsGlobalVariables(filter: { locale: { eq: $language } }) {
       nodes {
         metadata {
-          header_links {
-            id
-            href
-            text
-          }
-          footer_links {
+          menu_links {
             id
             href
             text
