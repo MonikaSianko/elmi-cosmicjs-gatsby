@@ -16,7 +16,7 @@ export const StyledHeroWrapper = styled.section`
       padding-top: 150px;
       padding-bottom: 50px;
       position: relative;
-      height: 100%;
+
       ::after {
         content: "";
         width: 40%;
@@ -31,7 +31,6 @@ export const StyledHeroWrapper = styled.section`
     }
     @media ${breakpointsMax.l} {
       background: ${colors.whiteGradient};
-      width: 100%;
     }
     @media ${breakpointsMax.m} {
       background: transparent;
@@ -66,11 +65,11 @@ export const StyledHeroWrapper = styled.section`
   .hero-image-mobile-wrapper {
     position: relative;
     ::after {
+      position: absolute;
       content: "";
-      width: 120%;
+      width: 100%;
       height: 80%;
       background-color: ${colors.text};
-      position: absolute;
       bottom: 3px;
       left: 0;
       z-index: -5;
@@ -86,6 +85,7 @@ export const StyledHeroWrapper = styled.section`
   .text {
     width: 55%;
     padding-bottom: ${spaces.xxl};
+
     h1 {
       color: ${colors.text};
     }
@@ -116,6 +116,7 @@ export const StyledHeroWrapper = styled.section`
       display: flex;
       flex-direction: column;
       align-items: center;
+
       .btn-primary {
         margin-bottom: ${spaces.m};
       }

@@ -1,5 +1,10 @@
 import styled from "styled-components"
-import { fontSize, radius, spaces } from "../../../constants/contants"
+import {
+  breakpointsMax,
+  fontSize,
+  radius,
+  spaces,
+} from "../../../constants/contants"
 import { breakpoints } from "../../utils/breakpoints"
 import * as palette from "../../utils/styles"
 
@@ -8,7 +13,9 @@ export const StyledForm = styled.div`
   flex-direction: column;
   align-items: flex-end;
   width: 40%;
-
+  @media ${breakpointsMax.m} {
+    width: 100%;
+  }
   div {
     display: flex;
     flex-direction: column;

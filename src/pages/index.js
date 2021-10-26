@@ -38,7 +38,6 @@ export default function HomePage({ data }) {
           settings={{
             dots: false,
             infinite: true,
-            speed: 500,
             slidesToShow: isMobile ? 2 : 3,
             slidesToScroll: 2,
             centerMode: true,
@@ -55,9 +54,9 @@ export default function HomePage({ data }) {
         settings={{
           dots: true,
           infinite: true,
-          speed: 500,
-          slidesToShow: 3,
+          slidesToShow: isTablet ? 1 : 3,
           slidesToScroll: 2,
+          centerMode: true,
           autoplay: true,
           speed: 400,
         }}

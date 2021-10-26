@@ -14,7 +14,7 @@ export const GenericWrapper = styled.div`
   margin: 0 auto;
   font-family: "Roboto", sans-serif;
   color: ${colors.text};
-  overflow-x: hidden;
+
   h1 {
     font-size: ${fontSize.xxxl};
     font-weight: ${fontWeight.regular};

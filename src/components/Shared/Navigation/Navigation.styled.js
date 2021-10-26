@@ -1,6 +1,7 @@
 import styled from "styled-components"
 import {
   borders,
+  breakpointsMax,
   colors,
   fontSize,
   fontWeight,
@@ -17,8 +18,10 @@ export const StyledNavigationWrapper = styled.div`
   .generic-wrapper {
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    width: 70%;
+    justify-content: space-around;
+    @media ${breakpointsMax.l} {
+      flex-direction: column;
+    }
   }
 `
 
@@ -35,6 +38,11 @@ export const Card = styled.div`
   width: 15em;
   text-align: center;
   cursor: pointer;
+  :nth-of-type(2) {
+    @media ${breakpointsMax.l} {
+      margin: ${spaces.m} 0;
+    }
+  }
   h5 {
     font-size: ${fontSize.m};
     font-weight: ${fontWeight.medium};
@@ -44,6 +52,10 @@ export const Card = styled.div`
   img {
     width: 8em;
     height: 8em;
+    @media ${breakpointsMax.m} {
+      width: 6em;
+      height: 6em;
+    }
   }
   .with-text {
     border: ${borders.blue};

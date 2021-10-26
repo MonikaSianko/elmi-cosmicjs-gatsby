@@ -3,12 +3,12 @@ import { GenericWrapper } from "../Generic/Generic.styles"
 
 import { ArrowDown, Card, StyledNavigationWrapper } from "./Navigation.styled"
 
-const Navigation = ({ data }) => {
+const Navigation = ({ data, className }) => {
   return (
-    <StyledNavigationWrapper className="navigation-wrapper">
+    <StyledNavigationWrapper>
       <GenericWrapper className="generic-wrapper">
         {data.map(el => (
-          <Card key={el.id} className="card">
+          <Card key={el.id}>
             <img src={el.icon} alt={el.title}></img>
             <h5>{el.title}</h5>
             {!el.btnText ? (

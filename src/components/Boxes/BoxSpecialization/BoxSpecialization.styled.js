@@ -1,9 +1,11 @@
 import styled from "styled-components"
-import { colors, fontWeight, radius, spaces } from "../../../constants/contants"
-
-//helpers
-import { breakpoints } from "../../utils/breakpoints"
-import * as palette from "../../utils/styles"
+import {
+  breakpointsMax,
+  colors,
+  fontWeight,
+  radius,
+  spaces,
+} from "../../../constants/contants"
 
 export const StyledSpecializationWrapper = styled.div`
   display: flex;
@@ -13,6 +15,9 @@ export const StyledSpecializationWrapper = styled.div`
     max-height: 370px;
     right: 0;
     border-radius: ${radius.m};
+    @media ${breakpointsMax.l} {
+      display: none;
+    }
   }
   .text-box {
     padding-right: ${spaces.m};
