@@ -3,8 +3,6 @@ import {
   borders,
   breakpointsMax,
   colors,
-  fontSize,
-  fontWeight,
   spaces,
   zIndex,
 } from "../../../constants/contants"
@@ -50,7 +48,7 @@ export const StyledHeader = styled.header`
       bottom: -80px;
       right: 0;
       flex-direction: column;
-      align-items: flex-start;
+      align-items: center;
       width: 100%;
       height: 100%;
     }

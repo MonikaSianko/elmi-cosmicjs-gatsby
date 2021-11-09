@@ -3,6 +3,9 @@ import { breakpointsMax, colors, spaces } from "../../../constants/contants"
 
 export const StyledContactWrapper = styled.section`
   background-color: ${colors.lightGrey};
+  h2 {
+    padding-top: ${spaces.m};
+  }
   .upper-row {
     display: flex;
     justify-content: space-between;

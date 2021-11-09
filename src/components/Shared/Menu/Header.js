@@ -8,9 +8,7 @@ import { useMediaQuery } from "react-responsive"
 import { RiMenuLine as MenuIcon } from "react-icons/ri"
 import MenuLinks from "../MenuLinks/MenuLinks"
 
-const Header = ({ data }) => {
-  const logo = data.logo.imgix_url
-  const menu_links = data.menu_links
+const Header = ({ menuLinks, logo }) => {
   const isMobile = useMediaQuery({ query: breakpointsMax.m })
   const [isMenuOpen, setMenuOpen] = useState(false)
 
@@ -29,14 +27,14 @@ const Header = ({ data }) => {
               <MenuIcon onClick={toggleMenu} className="menu-icon" />
               {isMenuOpen && (
                 <div className="navigation">
-                  <MenuLinks data={menu_links} withIcons />
+                  <MenuLinks menuLinks={menuLinks} withIcons />
                   <LanguagePicker />
                 </div>
               )}
             </>
           ) : (
             <div className="navigation">
-              <MenuLinks data={menu_links} />
+              <MenuLinks menuLinks={menuLinks} />
               <LanguagePicker />
             </div>
           )}

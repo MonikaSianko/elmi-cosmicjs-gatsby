@@ -4,9 +4,8 @@ import {
   fontSize,
   radius,
   spaces,
+  borders,
 } from "../../../constants/contants"
-import { breakpoints } from "../../utils/breakpoints"
-import * as palette from "../../utils/styles"
 
 export const StyledForm = styled.div`
   display: flex;
@@ -24,12 +23,12 @@ export const StyledForm = styled.div`
   }
   input,
   textarea {
-    border: ${palette.borderDarkGrey};
+    border: ${borders.darkGrey};
     border-radius: ${radius.s};
     padding: ${spaces.xs};
     :focus {
       outline: none;
-      border: ${palette.borderBlue};
+      border: ${borders.blue};
     }
   }
   input {
@@ -43,5 +42,6 @@ export const StyledForm = styled.div`
   }
   label {
     font-size: ${fontSize.xs};
+    text-transform: lowercase;
   }
 `

@@ -13,7 +13,7 @@ export const StyledMenuLinks = styled.nav`
     list-style: none;
     margin: 0;
     padding-left: 1em;
-    @media ${breakpointsMax.s} {
+    @media ${breakpointsMax.m} {
       flex-direction: column;
     }
   }

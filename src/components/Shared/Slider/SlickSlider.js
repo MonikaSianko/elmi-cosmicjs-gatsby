@@ -9,14 +9,13 @@ export default function SlickSlider({
   className,
   withTitle,
 }) {
-  console.log(content)
   return (
     <StyledSlickSlider>
       <GenericWrapper>
         <Slider {...settings} className={className}>
-          {content.map(el => (
-            <div key={el.id} className="box">
-              <img src={el.icon} alt={el.title} className="icon" />
+          {content.map((el, i) => (
+            <div key={i} className="box">
+              <img src={el.icon.imgix_url} alt={el.title} className="icon" />
               {withTitle && <div className="text">{el.title}</div>}
             </div>
           ))}

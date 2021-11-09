@@ -1,60 +1,84 @@
-// import React from "react"
-// import { graphql } from "gatsby"
-// import { useIntl } from "gatsby-plugin-react-intl"
+import { graphql } from "gatsby"
+import React, { memo } from "react"
+import BoxAbout from "../components/Boxes/BoxAbout/BoxAbout"
+import Layout from "../components/Shared/Layout/Layout"
 
-// import "../components/reset.css"
+const AboutPage = ({ data }) => {
+  const homeData = data.allCosmicjsHome.nodes[0].metadata
+  const globalData = homeData.global.metadata
+  const logo = globalData.logo.imgix_url
+  const menuLinks = globalData.menu_links.metadata.links
 
-// import Layout from "../components/Layout/Layout"
-// import PersonCard from "../components/OurTeam/PersonCard"
-// import {
-//   OurTeamWrapper,
-//   CardsWrapper,
-// } from "../components/OurTeam/PersonStyles"
-// import { Container } from "../components/GlobalStyles/globalStyles"
+  const aboutData = homeData.about[0].metadata
+  const messages = aboutData.messages
+  const aboutDescription = aboutData.description.metadata
+  const teamMembers = aboutData.team_members
 
-// export default function AboutPage({ data }) {
-//   const intl = useIntl()
-//   return (
-//     <>
-//       <Layout color="grey">
-//         <OurTeamWrapper>
-//           <Container style={{ overflow: "hidden" }}>
-//             <h2>{intl.formatMessage({ id: "our-team" })}</h2>
-//             <CardsWrapper>
-//               {data.allContentfulOurTeam.nodes.map(el => (
-//                 <PersonCard
-//                   title={el.title}
-//                   fullName={el.fullName}
-//                   description={el.description.childMarkdownRemark.html}
-//                   photo={el.photo.file.url}
-//                 />
-//               ))}
-//             </CardsWrapper>
-//           </Container>
-//         </OurTeamWrapper>
-//       </Layout>
-//     </>
-//   )
-// }
+  return (
+    <Layout logo={logo} menuLinks={menuLinks}>
+      <BoxAbout
+        messages={messages}
+        aboutDescription={aboutDescription}
+        teamMembers={teamMembers}
+      />
+    </Layout>
+  )
+}
 
-// export const ourTeamQuery = graphql`
-//   query ourTeamQuery($language: String) {
-//     allContentfulOurTeam(filter: { node_locale: { eq: $language } }) {
-//       nodes {
-//         node_locale
-//         title
-//         fullName
-//         description {
-//           childMarkdownRemark {
-//             html
-//           }
-//         }
-//         photo {
-//           file {
-//             url
-//           }
-//         }
-//       }
-//     }
-//   }
-// `
+export default memo(AboutPage)
+
+export const query = graphql`
+  query AboutQuery {
+    allCosmicjsHome {
+      nodes {
+        metadata {
+          global {
+            metadata {
+              logo {
+                imgix_url
+              }
+              menu_links {
+                metadata {
+                  links {
+                    icon {
+                      imgix_url
+                    }
+                    link
+                    text
+                  }
+                }
+              }
+            }
+          }
+          about {
+            metadata {
+              description {
+                metadata {
+                  description
+                  image {
+                    imgix_url
+                  }
+                  image_alt
+                  title
+                }
+              }
+              messages {
+                header_text
+              }
+              team_members {
+                metadata {
+                  bio
+                  image {
+                    imgix_url
+                  }
+                  name_and_surname
+                  position
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+`

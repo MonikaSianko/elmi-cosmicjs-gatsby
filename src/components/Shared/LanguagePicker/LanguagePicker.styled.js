@@ -9,6 +9,8 @@ import {
 
 export const StyledLanguagePicker = styled.div`
   position: relative;
+  // until localization is introduced in cosmic
+  display: none;
 
   .arrow {
     width: 30px;

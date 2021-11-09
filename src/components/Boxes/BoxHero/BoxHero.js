@@ -7,7 +7,7 @@ import { GenericWrapper } from "../../Shared/Generic/Generic.styles"
 import { breakpointsMax } from "../../../constants/contants"
 import { useMediaQuery } from "react-responsive"
 
-export default function Hero({ data, industries }) {
+export default function Hero({ heroData, industriesData }) {
   const {
     primary_btn_link,
     primary_btn_text,
@@ -17,7 +17,8 @@ export default function Hero({ data, industries }) {
     secondary_btn_text,
     image,
     description,
-  } = data
+  } = heroData
+
   const isTablet = useMediaQuery({ query: breakpointsMax.m })
   return (
     <StyledHeroWrapper>
@@ -46,7 +47,7 @@ export default function Hero({ data, industries }) {
             secondary_text={secondary_btn_text}
           />
         </div>
-        {!isTablet && <BoxIndustries data={industries} />}
+        {!isTablet && <BoxIndustries industriesData={industriesData} />}
       </GenericWrapper>
     </StyledHeroWrapper>
   )

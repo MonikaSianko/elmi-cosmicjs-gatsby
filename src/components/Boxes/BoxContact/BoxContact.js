@@ -2,39 +2,25 @@ import React from "react"
 
 import Form from "../../Shared/Form/Form"
 import { GenericWrapper } from "../../Shared/Generic/Generic.styles"
+import Map from "../../Shared/Map/Map"
 import { StyledContactWrapper } from "./BoxContact.styled"
 
-function Contact({ data }) {
-  const {
-    map_url,
-    email,
-    phone,
-    address,
-    localization_icon,
-    phone_icon,
-    email_icon,
-  } = data
-  console.log(localization_icon)
+function Contact({ contactData, messages }) {
   return (
     <StyledContactWrapper>
       <GenericWrapper>
+        <h2>{messages.contact_text}</h2>
         <div className="upper-row">
-          <img src={map_url} alt="map" />
-          <Form data={data} />
+          <Map />
+          <Form messages={messages} />
         </div>
-        <div className="contact-info">
-          <div>
-            <img src={localization_icon} alt="localization-icon" />
-            <p>{address}</p>
-          </div>
-          <div>
-            <img src={phone_icon} alt="phone" />
-            <p>{phone}</p>
-          </div>
-          <div>
-            <img src={email_icon} alt="email" />
-            <p>{email}</p>
-          </div>
+        <div className="contact-info" id={contactData.id}>
+          {contactData.means_of_contact.map((el, i) => (
+            <div key={i}>
+              <img src={el.icon.imgix_url} alt={el.type_text} />
+              <p>{el.details_text}</p>
+            </div>
+          ))}
         </div>
       </GenericWrapper>
     </StyledContactWrapper>

@@ -9,16 +9,18 @@ import {
   shadows,
   spaces,
 } from "../../../constants/contants"
-import { FiArrowDownCircle } from "react-icons/fi"
-import { primaryBlue } from "../../utils/styles"
+import { card } from "../Generic/Generic.styles"
 
 export const StyledNavigationWrapper = styled.div`
-  padding: 85px 0;
-  background-color: ${colors.lightGrey};
+  padding: ${props => (props.theme === "grey" ? "85px 0" : "125px 0 85px 0")};
+  background-color: ${props =>
+    props.theme === "grey" ? `${colors.lightGrey}` : `${colors.white}`};
+  border-bottom: ${props => (props.border ? `${borders.blue}` : "")};
   .generic-wrapper {
     display: flex;
     align-items: center;
-    justify-content: space-around;
+    justify-content: ${props =>
+      props.layout ? `${props.layout}` : "space-around"};
     @media ${breakpointsMax.l} {
       flex-direction: column;
     }
@@ -26,14 +28,12 @@ export const StyledNavigationWrapper = styled.div`
 `
 
 export const Card = styled.div`
-  background-color: white;
-  box-shadow: ${shadows.boxShadow};
+  ${card}
   margin: 1rem 0;
   display: flex;
   flex-direction: column;
   align-items: center;
-  border-radius: ${radius.m};
-  padding: ${spaces.xxl} ${spaces.xxl};
+  padding: ${spaces.l} ${spaces.xl};
   margin: 0 ${spaces.xl};
   width: 15em;
   text-align: center;
@@ -62,17 +62,5 @@ export const Card = styled.div`
     border-radius: ${radius.button};
     padding: ${spaces.xxs} ${spaces.xs};
     color: ${colors.primaryBlue};
-  }
-`
-
-export const ArrowDown = styled(FiArrowDownCircle)`
-  color: ${colors.primaryBlue};
-  width: 2.5em;
-  height: 2.5em;
-  margin-top: 1.5em;
-  cursor: pointer;
-  transition: all 0.2s ease-in-out;
-  :hover {
-    transform: scale(1.2);
   }
 `

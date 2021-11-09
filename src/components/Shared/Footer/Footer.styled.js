@@ -1,13 +1,15 @@
 import styled from "styled-components"
-import Link from "gatsby-link"
-
-import * as palette from "../../utils/styles"
-import { breakpoints } from "../../utils/breakpoints"
-import { fontSize, spaces } from "../../../constants/contants"
+import {
+  borders,
+  breakpointsMax,
+  colors,
+  fontSize,
+  spaces,
+} from "../../../constants/contants"
 
 export const StyledFooterWrapper = styled.div`
   width: 100%;
-  border-top: ${palette.borderBlue};
+  border-top: ${borders.blue};
   .generic-wrapper {
     display: flex;
     justify-content: center;
@@ -20,9 +22,9 @@ export const StyledFooterWrapper = styled.div`
     list-style: none;
     margin: 0;
     padding-left: 1em;
-    @media ${breakpoints.sm} {
+    @media ${breakpointsMax.s} {
       flex-direction: column;
-      border-left: 5px solid ${palette.primaryBlue};
+      border-left: 5px solid ${colors.primaryBlue};
     }
   }
   li {
@@ -36,13 +38,13 @@ export const StyledFooterWrapper = styled.div`
   }
   a {
     text-decoration: none;
-    color: ${palette.textColor};
+    color: ${colors.text};
     font-size: ${fontSize.xs};
     vertical-align: top;
     line-height: 16px;
     :hover {
-      color: ${palette.primaryBlue};
-      border-bottom: ${palette.borderBlue};
+      color: ${colors.primaryBlue};
+      border-bottom: ${borders.blue};
     }
   }
 `

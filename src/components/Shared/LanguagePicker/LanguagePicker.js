@@ -19,8 +19,8 @@ function LanguagePicker({ burgerState }) {
   return (
     <StyledLanguagePicker isOpen={isOpen} className="lng-picker">
       <div className="icons-box">
-        <GoGlobe onClick={hanldeOpen} className="globe" />
-        <BiChevronDown onClick={hanldeOpen} className="arrow" />
+        <GoGlobe onClick={hanldeOpen} className="globe" role="button" />
+        <BiChevronDown onClick={hanldeOpen} className="arrow" role="button" />
       </div>
       {isOpen ? (
         <div className="dropdown">

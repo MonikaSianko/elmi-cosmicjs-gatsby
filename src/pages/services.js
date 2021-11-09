@@ -1,65 +1,93 @@
-// import * as React from "react"
-// import { graphql } from "gatsby"
-// import "../components/reset.css"
+import { graphql } from "gatsby"
+import React from "react"
+import { memo } from "react"
+import BoxServices from "../components/Boxes/BoxServices/BoxServices"
+import Layout from "../components/Shared/Layout/Layout"
+import Navigation from "../components/Shared/Navigation/Navigation"
 
-// import ServicesNav from "../components/Serivces/ServicesNav"
-// import Header from "../components/Header/Header"
-// import Service from "../components/Serivces/Service"
-// import Footer from "../components/Layout/Footer/index"
+const ServicesPage = ({ data }) => {
+  const homeData = data.allCosmicjsHome.nodes[0].metadata
+  const globalData = homeData.global.metadata
+  const logo = globalData.logo.imgix_url
+  const menuLinks = globalData.menu_links.metadata.links
 
-// if (typeof window !== "undefined") {
-//   // eslint-disable-next-line global-require
-//   require("smooth-scroll")('a[href*="#"]')
-// }
+  const servicesData = homeData.services[0].metadata
+  const navigationData = servicesData.navigation.metadata
+  const servicesContent = servicesData.services
 
-// export default function ServicesPage({ data }) {
-//   console.log(data)
-//   return (
-//     <>
-//       <Header />
-//       <ServicesNav />
-//       {data.allContentfulService.nodes.map(el => (
-//         <>
-//           <Service
-//             anchorTag={el.anchorTag}
-//             title={el.title}
-//             details={el.detailsIcons}
-//             description={el.description.childMarkdownRemark.html}
-//             photo={el.photo.file.url}
-//             photoTitle={el.photo.title}
-//           />
-//         </>
-//       ))}
-//       <Footer />
-//     </>
-//   )
-// }
+  return (
+    <Layout logo={logo} menuLinks={menuLinks}>
+      <Navigation navigationData={navigationData} border/>
+      <BoxServices servicesContent={servicesContent} />
+    </Layout>
+  )
+}
 
-// export const servicesQuery = graphql`
-//   query ServicesQuery($language: String) {
-//     allContentfulService(filter: { node_locale: { eq: $language } }) {
-//       nodes {
-//         node_locale
-//         anchorTag
-//         title
-//         description {
-//           childMarkdownRemark {
-//             html
-//           }
-//         }
-//         detailsIcons {
-//           file {
-//             url
-//           }
-//           description
-//           title
-//         }
-//         photo {
-//           file {
-//             url
-//           }
-//         }
-//       }
-//     }
-//   }
-// `
+export default memo(ServicesPage)
+
+export const query = graphql`
+  query ServicesQuery {
+    allCosmicjsHome {
+      nodes {
+        metadata {
+          global {
+            metadata {
+              logo {
+                imgix_url
+              }
+              menu_links {
+                metadata {
+                  links {
+                    icon {
+                      imgix_url
+                    }
+                    link
+                    text
+                  }
+                }
+              }
+            }
+          }
+          services {
+            metadata {
+              navigation {
+                metadata {
+                  details {
+                    button_text
+                    icon {
+                      imgix_url
+                    }
+                    link
+                    text
+                  }
+                }
+              }
+              services {
+                metadata {
+                  title
+                  description
+                  image_alt
+                  id
+                  features {
+                    details {
+                      image {
+                        imgix_url
+                      }
+                      image_alt
+                      title
+                    }
+                    with_numbers
+                    layout_horizontal
+                  }
+                  image {
+                    imgix_url
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+`

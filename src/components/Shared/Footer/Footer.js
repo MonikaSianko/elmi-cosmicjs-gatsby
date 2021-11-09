@@ -4,12 +4,11 @@ import MenuLinks from "../MenuLinks/MenuLinks"
 
 import { StyledFooterWrapper } from "./Footer.styled"
 
-const Footer = ({ data }) => {
-  const menu_links = data.menu_links
+const Footer = ({ menuLinks }) => {
   return (
     <StyledFooterWrapper>
       <GenericWrapper className="generic-wrapper">
-        <MenuLinks withIcons data={menu_links} />
+        <MenuLinks withIcons menuLinks={menuLinks} />
       </GenericWrapper>
     </StyledFooterWrapper>
   )

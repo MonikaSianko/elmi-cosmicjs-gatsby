@@ -47,8 +47,9 @@ export const fontSize = {
   xs: "14px",
   s: "16px",
   m: "18px",
+  ml: "20px",
   l: "24px",
-  xl: "28px",
+  xl: "32px",
   xxl: "42px",
   xxxl: "46px",
 }
@@ -67,14 +68,15 @@ export const spaces = {
   m: "20px",
   l: "25px",
   xl: "30px",
-  xxl: "40px",
-  xxxl: "60px",
+  xxl: "45px",
+  xxxl: "65px",
 }
 
 export const radius = {
   button: "20px",
   s: "5px",
   m: "10px",
+  circle: "50%",
 }
 
 export const zIndex = {

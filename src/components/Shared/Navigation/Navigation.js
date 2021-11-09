@@ -1,27 +1,36 @@
 import React, { memo } from "react"
-import { GenericWrapper } from "../Generic/Generic.styles"
+import { empty } from "../../../helpers/helpers"
+import { ArrowDown, GenericWrapper } from "../Generic/Generic.styles"
 
-import { ArrowDown, Card, StyledNavigationWrapper } from "./Navigation.styled"
+import { Card, StyledNavigationWrapper } from "./Navigation.styled"
 
-const Navigation = ({ data, className }) => {
+const Navigation = ({ navigationData, theme, layout, border }) => {
   return (
-    <StyledNavigationWrapper>
+    <StyledNavigationWrapper
+      theme={theme !== empty ? theme : ""}
+      layout={layout !== empty ? layout : ""}
+      border={border !== empty ? border : ""}
+    >
       <GenericWrapper className="generic-wrapper">
-        {data.map(el => (
-          <Card key={el.id}>
-            <img src={el.icon} alt={el.title}></img>
-            <h5>{el.title}</h5>
-            {!el.btnText ? (
-              <a href={el.btnLink} className="with-arrow">
-                <ArrowDown />{" "}
-              </a>
-            ) : (
-              <a href={el.btnLink} className="with-text">
-                {el.btnText}
-              </a>
-            )}
-          </Card>
-        ))}
+        {navigationData.details.map((el, i) => {
+          const withButton = el.button_text !== "" || undefined
+
+          return (
+            <Card key={i}>
+              <img src={el.icon.imgix_url} alt={el.text}></img>
+              <h5>{el.text}</h5>
+              {withButton ? (
+                <a href={el.link} className="with-text">
+                  {el.button_text}
+                </a>
+              ) : (
+                <a href={el.link} className="with-arrow">
+                  <ArrowDown />
+                </a>
+              )}
+            </Card>
+          )
+        })}
       </GenericWrapper>
     </StyledNavigationWrapper>
   )

@@ -1,15 +1,14 @@
 import React, { memo } from "react"
-import { GenericWrapper } from "../Generic/Generic.styles"
 import { StyledMenuLinks } from "./MenuLinks.styled"
 
-const MenuLinks = ({ data, withIcons }) => {
+const MenuLinks = ({ menuLinks, withIcons }) => {
   return (
     <StyledMenuLinks className="menu-links">
       <ul className="links">
-        {data.map(({ text, href, id, icon }) => (
-          <li key={id}>
-            {withIcons && <img src={icon} alt={text} />}
-            <a href={href}>{text}</a>
+        {menuLinks.map(({ i, text, link, icon }) => (
+          <li key={i}>
+            {withIcons && <img src={icon.imgix_url} alt={text} />}
+            <a href={link}>{text}</a>
           </li>
         ))}
       </ul>
