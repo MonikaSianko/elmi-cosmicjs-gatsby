@@ -1,7 +1,6 @@
 import styled from "styled-components"
 import {
   breakpointsMax,
-  colors,
   spaces,
   radius,
   fontWeight,

@@ -1,10 +1,5 @@
 import styled from "styled-components"
-import {
-  breakpointsMax,
-  colors,
-  fontWeight,
-  radius,
-} from "../../../constants/contants"
+import { colors, radius } from "../../../constants/contants"
 
 export const StyledButtonBox = styled.div`
   display: inline-block;

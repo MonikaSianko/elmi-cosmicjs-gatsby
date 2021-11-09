@@ -13,15 +13,16 @@ import Layout from "../components/Shared/Layout/Layout"
 
 // guery filtered by locale
 // query MyQuery($language: String) {
-//   allCosmicjsHome(filter: { locale: { eq: $language } }) {
+//   allCosmicjsAllPages(filter: { locale: { eq: $language } }) {
 
 export default function HomePage({ data }) {
   // for all page queries
-  const homeData = data.allCosmicjsHome.nodes[0].metadata
-  const globalData = homeData.global.metadata
+  const pagesData = data.allCosmicjsAllPages.nodes[0].metadata
+  const globalData = pagesData.global.metadata
   const logo = globalData.logo.imgix_url
   const menuLinks = globalData.menu_links.metadata.links
   // home page query
+  const homeData = pagesData.home.metadata
   const heroData = homeData.hero.metadata
   const industriesData = homeData.industries.metadata.slider
   const navigationData = homeData.navigation.metadata
@@ -75,7 +76,7 @@ export default function HomePage({ data }) {
 
 export const query = graphql`
   query HomeQuery {
-    allCosmicjsHome {
+    allCosmicjsAllPages {
       nodes {
         metadata {
           global {
@@ -96,79 +97,82 @@ export const query = graphql`
               }
             }
           }
-          hero {
+          home {
             metadata {
-              description
-              image {
-                imgix_url
-              }
-              image_alt
-              primary_btn_link
-              primary_btn_text
-              primary_text
-              secondary_btn_link
-              secondary_btn_text
-              secondary_text
-            }
-          }
-          industries {
-            metadata {
-              slider {
-                icon {
-                  imgix_url
+              hero {
+                metadata {
+                  description
+                  image {
+                    imgix_url
+                  }
+                  image_alt
+                  primary_btn_link
+                  primary_btn_text
+                  primary_text
+                  secondary_btn_link
+                  secondary_btn_text
+                  secondary_text
                 }
-                title
               }
-            }
-          }
-          navigation {
-            metadata {
-              details {
-                button_text
-                icon {
-                  imgix_url
+              industries {
+                metadata {
+                  slider {
+                    icon {
+                      imgix_url
+                    }
+                    title
+                  }
                 }
-                link
-                text
               }
-            }
-          }
-          messages {
-            contact_text
-            form_email
-            form_message
-            form_name
-            form_send
-          }
-          partners {
-            metadata {
-              slider {
-                icon {
-                  imgix_url
+              messages {
+                contact_text
+                form_email
+                form_message
+                form_send
+              }
+              navigation {
+                metadata {
+                  details {
+                    button_text
+                    icon {
+                      imgix_url
+                    }
+                    link
+                    text
+                  }
                 }
-                title
               }
-            }
-          }
-          specialization {
-            metadata {
-              description
-              image {
-                imgix_url
-              }
-              image_alt
-              title
-            }
-          }
-          contact {
-            metadata {
-              id
-              means_of_contact {
-                details_text
-                icon {
-                  imgix_url
+              partners {
+                metadata {
+                  slider {
+                    icon {
+                      imgix_url
+                    }
+                    title
+                  }
                 }
-                type_text
+              }
+              contact {
+                metadata {
+                  id
+                  means_of_contact {
+                    details_text
+                    icon {
+                      imgix_url
+                    }
+                    type_text
+                  }
+                }
+              }
+              specialization {
+                metadata {
+                  description
+                  image {
+                    imgix_url
+                  }
+                  image_alt
+                  title
+                }
               }
             }
           }

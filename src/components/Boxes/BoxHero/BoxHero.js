@@ -17,6 +17,7 @@ export default function Hero({ heroData, industriesData }) {
     secondary_btn_text,
     image,
     description,
+    image_alt,
   } = heroData
 
   const isTablet = useMediaQuery({ query: breakpointsMax.m })
@@ -24,7 +25,11 @@ export default function Hero({ heroData, industriesData }) {
     <StyledHeroWrapper>
       <GenericWrapper className="generic-wrapper">
         {!isTablet && (
-          <img src={image.imgix_url} className="hero-image-desktop" />
+          <img
+            src={image.imgix_url}
+            alt={image_alt}
+            className="hero-image-desktop"
+          />
         )}
         <div className="content-box">
           <div className="text">
@@ -32,7 +37,11 @@ export default function Hero({ heroData, industriesData }) {
             <h3>{secondary_text}</h3>
             {isTablet && (
               <div className="hero-image-mobile-wrapper">
-                <img src={image.imgix_url} className="hero-image-mobile" />
+                <img
+                  src={image.imgix_url}
+                  alt={image_alt}
+                  className="hero-image-mobile"
+                />
               </div>
             )}
             <div

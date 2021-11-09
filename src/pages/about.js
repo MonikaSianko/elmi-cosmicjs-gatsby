@@ -4,12 +4,12 @@ import BoxAbout from "../components/Boxes/BoxAbout/BoxAbout"
 import Layout from "../components/Shared/Layout/Layout"
 
 const AboutPage = ({ data }) => {
-  const homeData = data.allCosmicjsHome.nodes[0].metadata
-  const globalData = homeData.global.metadata
+  const pagesData = data.allCosmicjsAllPages.nodes[0].metadata
+  const globalData = pagesData.global.metadata
   const logo = globalData.logo.imgix_url
   const menuLinks = globalData.menu_links.metadata.links
 
-  const aboutData = homeData.about[0].metadata
+  const aboutData = pagesData.about[0].metadata
   const messages = aboutData.messages
   const aboutDescription = aboutData.description.metadata
   const teamMembers = aboutData.team_members
@@ -29,7 +29,7 @@ export default memo(AboutPage)
 
 export const query = graphql`
   query AboutQuery {
-    allCosmicjsHome {
+    allCosmicjsAllPages {
       nodes {
         metadata {
           global {

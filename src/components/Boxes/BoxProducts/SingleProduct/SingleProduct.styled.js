@@ -3,7 +3,6 @@ import {
   spaces,
   borders,
   radius,
-  fontSize,
   fontWeight,
   colors,
   breakpointsMax,

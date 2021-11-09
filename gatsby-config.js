@@ -41,10 +41,10 @@ module.exports = {
       options: {
         bucketSlug: "elmi-development",
         // We add the 'team-members' object type to be able to fetch it later
-        objectTypes: ["home", "global-variables"],
+        objectTypes: ["all-pages"],
         // If you have enabled read_key to fetch data (optional).
         apiAccess: {
-          read_key: "rxTQA30PXyzACE128rq5w4t6e0q26fODNqKxPMbgr8gnDIx4El",
+          read_key: "X6WYCgjsW0AlTzOSBKjZb8wfz9lj4K3OwVoXhUdfuYqbxciUoD",
         },
       },
     },

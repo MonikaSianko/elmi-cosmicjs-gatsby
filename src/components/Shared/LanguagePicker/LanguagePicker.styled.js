@@ -35,7 +35,7 @@ export const StyledLanguagePicker = styled.div`
     box-shadow: ${shadows.boxShadow};
     padding: ${spaces.xs} 0;
 
-    a {
+    li {
       padding: ${spaces.xs} ${spaces.xs};
       :hover {
         background-color: ${colors.lightBlue};

@@ -1,5 +1,4 @@
 import React, { memo, useState } from "react"
-import { empty } from "../../../../helpers/helpers"
 import Description from "../../../Shared/Description/Description"
 import { ArrowDown, ArrowUp } from "../../../Shared/Generic/Generic.styles"
 
@@ -14,13 +13,6 @@ const SingleProduct = ({ product, main }) => {
   }
 
   const singleProduct = (
-    // <div className="product main">
-    //   <div
-    //     dangerouslySetInnerHTML={{ __html: description }}
-    //     className="description"
-    //   ></div>
-    //   <img src={image.imgix_url} alt={title}></img>
-    // </div>
     <Description
       title={title}
       description={description}

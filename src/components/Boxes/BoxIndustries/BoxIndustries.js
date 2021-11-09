@@ -1,4 +1,4 @@
-import React, { memo, useState } from "react"
+import React, { memo } from "react"
 import { StyledIndustries } from "./BoxIndustries.styled"
 
 const BoxIndustries = ({ industriesData }) => {

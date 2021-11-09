@@ -6,7 +6,6 @@ import {
   fontSize,
   fontWeight,
   radius,
-  shadows,
   spaces,
 } from "../../../constants/contants"
 import { card } from "../Generic/Generic.styles"

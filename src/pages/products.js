@@ -7,12 +7,12 @@ import BoxProducts from "../components/Boxes/BoxProducts/BoxProducts"
 
 export default function ProductsPage({ data }) {
   // for all page queries
-  const homeData = data.allCosmicjsHome.nodes[0].metadata
-  const globalData = homeData.global.metadata
+  const pagesData = data.allCosmicjsAllPages.nodes[0].metadata
+  const globalData = pagesData.global.metadata
   const logo = globalData.logo.imgix_url
   const menuLinks = globalData.menu_links.metadata.links
   // product page query
-  const productsData = homeData.products[0].metadata
+  const productsData = pagesData.products[0].metadata
   const navigationData = productsData.navigation.metadata
   const productGroups = productsData.product_groups
 
@@ -29,7 +29,7 @@ export default function ProductsPage({ data }) {
 
 export const query = graphql`
   query ProductsQuery {
-    allCosmicjsHome {
+    allCosmicjsAllPages {
       nodes {
         metadata {
           global {

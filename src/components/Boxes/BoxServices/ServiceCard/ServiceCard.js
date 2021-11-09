@@ -17,11 +17,9 @@ const ServiceCard = ({ data }) => {
       />
       {features.details.length > 0 && (
         <div className="features-box">
-          {features.details.map((feature, index) => (
-            <div className="feature">
-              {features.with_numbers && (
-                <div className="number">{index + 1}</div>
-              )}
+          {features.details.map((feature, i) => (
+            <div className="feature" key={i}>
+              {features.with_numbers && <div className="number">{i + 1}</div>}
               <p>{feature.title}</p>
               <img src={feature.image.imgix_url} alt={feature.image_alt} />
             </div>

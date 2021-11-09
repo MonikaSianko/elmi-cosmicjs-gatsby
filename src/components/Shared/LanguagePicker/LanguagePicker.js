@@ -23,17 +23,17 @@ function LanguagePicker({ burgerState }) {
         <BiChevronDown onClick={hanldeOpen} className="arrow" role="button" />
       </div>
       {isOpen ? (
-        <div className="dropdown">
+        <ul className="dropdown">
           <IntlContextConsumer>
             {({ languages, language: currentLocale }) =>
               languages.map(language => (
-                <a key={language} onClick={() => changeLocale(language)}>
+                <button key={language} onClick={() => changeLocale(language)}>
                   {languageName[language]}
-                </a>
+                </button>
               ))
             }
           </IntlContextConsumer>
-        </div>
+        </ul>
       ) : null}
     </StyledLanguagePicker>
   )

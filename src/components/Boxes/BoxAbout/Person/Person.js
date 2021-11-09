@@ -2,7 +2,6 @@ import React, { memo } from "react"
 import { StyledPerson } from "./Person.styled"
 
 const Person = ({ personData }) => {
-  console.log(personData)
   const { name_and_surname, position, bio, image } = personData.metadata
   return (
     <StyledPerson>
