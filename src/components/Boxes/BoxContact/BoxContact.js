@@ -1,30 +1,28 @@
 import React from "react"
-
+import ContactInfo from "../../Shared/ContactInfo/ContactInfo"
 import Form from "../../Shared/Form/Form"
 import { GenericWrapper } from "../../Shared/Generic/Generic.styles"
+import Heading from "../../Shared/Heading/Heading"
 import Map from "../../Shared/Map/Map"
 import { StyledContactWrapper } from "./BoxContact.styled"
 
-function Contact({ contactData, messages }) {
+function BoxContact({ contactData }) {
+  const { messages, image } = contactData
+  const { title, short_text } = contactData.contact_details.metadata.messages
+  console.log(contactData)
   return (
     <StyledContactWrapper>
+      <Heading title={title} short_text={short_text} />
       <GenericWrapper>
-        <h2>{messages.contact_text}</h2>
         <div className="upper-row">
-          <Map />
+          <img src={image.imgix_url} alt={title} />
           <Form messages={messages} />
         </div>
-        <div className="contact-info" id={contactData.id}>
-          {contactData.means_of_contact.map((el, i) => (
-            <div key={i}>
-              <img src={el.icon.imgix_url} alt={el.type_text} />
-              <p>{el.details_text}</p>
-            </div>
-          ))}
-        </div>
       </GenericWrapper>
+      <ContactInfo contactInfo={contactData.contact_details.metadata} />
+      <Map />
     </StyledContactWrapper>
   )
 }
 
-export default Contact
+export default BoxContact

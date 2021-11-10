@@ -22,11 +22,13 @@ export const borders = {
 export const colors = {
   text: "#343A3D",
   white: "#FFFFFF",
+
   whiteGradient:
     "linear-gradient(90.12deg, rgba(255, 255, 255, 0.7) 21.94%, rgba(255, 255, 255, 0.567) 66.39%, rgba(255, 255, 255, 0) 94.07%)",
+  whiteHue: "rgba(255, 255, 255, 0.85)",
   lightGrey: "#F5F5F5",
   lightBlue: "#EDF6FD",
-  lightBlueHue: "rgba(237, 246, 253, 0.5)",
+  lightBlueHue: "rgba(237, 246, 253, 0.85)",
   secondaryBlue: "#61CCF4",
   primaryBlue: "#00A8E8",
   darkBlue: "#003459",
@@ -70,6 +72,7 @@ export const spaces = {
   xl: "30px",
   xxl: "45px",
   xxxl: "65px",
+  header: "120px",
 }
 
 export const radius = {

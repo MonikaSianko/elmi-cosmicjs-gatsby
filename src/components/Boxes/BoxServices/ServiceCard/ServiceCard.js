@@ -1,13 +1,14 @@
 import React from "react"
 import { memo } from "react"
 import Description from "../../../Shared/Description/Description"
+import FeatureCard from "../FeatureCard/FeatureCard"
 import { StyledServiceCard } from "./ServiceCard.styled"
 
 const ServiceCard = ({ data }) => {
   const { description, image, image_alt, title, features, id } = data
 
   return (
-    <StyledServiceCard layoutHorizontal={features.layout_horizontal} id={id}>
+    <StyledServiceCard id={id} layoutHorizontal={features.layout_horizontal}>
       <Description
         title={title}
         description={description}
@@ -18,11 +19,13 @@ const ServiceCard = ({ data }) => {
       {features.details.length > 0 && (
         <div className="features-box">
           {features.details.map((feature, i) => (
-            <div className="feature" key={i}>
-              {features.with_numbers && <div className="number">{i + 1}</div>}
-              <p>{feature.title}</p>
-              <img src={feature.image.imgix_url} alt={feature.image_alt} />
-            </div>
+            <FeatureCard
+              key={i}
+              features={features}
+              feature={feature}
+              layoutHorizontal={features.layout_horizontal}
+              number={i + 1}
+            />
           ))}
         </div>
       )}

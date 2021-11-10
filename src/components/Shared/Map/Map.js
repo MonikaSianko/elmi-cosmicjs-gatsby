@@ -1,29 +1,30 @@
 import React from "react"
-import GoogleMapReact from "google-map-react"
-import { lat, lng } from "../../../helpers/helpers"
-
-const AnyReactComponent = ({ text }) => <div>{text}</div>
+import styled from "styled-components"
+import { radius, shadows } from "../../../constants/contants"
+import { GenericWrapper } from "../Generic/Generic.styles"
 
 export default function Map() {
-  const defaultProps = {
-    center: {
-      lat: lat,
-      lng: lng,
-    },
-    zoom: 16,
-  }
-
   return (
-    // Important! Always set the container height explicitly
-    <div style={{ height: "300px", width: "50%" }}>
-      <GoogleMapReact
-        bootstrapURLKeys={{ key: "" }}
-        defaultCenter={defaultProps.center}
-        defaultZoom={defaultProps.zoom}
-        yesIWantToUseGoogleMapApiInternals={true}
-      >
-        <AnyReactComponent lat={lat} lng={lng} text="My Marker" />
-      </GoogleMapReact>
-    </div>
+    <StyledMap>
+      <GenericWrapper>
+        <iframe
+          id="gmap_canvas"
+          src="https://maps.google.com/maps?q=Zeganska%2016,%20warszawa&t=&z=15&ie=UTF8&iwloc=&output=embed"
+          frameborder="0"
+          scrolling="no"
+          marginheight="0"
+          marginwidth="0"
+        ></iframe>
+      </GenericWrapper>
+    </StyledMap>
   )
 }
+
+const StyledMap = styled.div`
+  iframe {
+    width: 100%;
+    height: 300px;
+    border-radius: ${radius.m};
+    box-shadow: ${shadows.cardShadow};
+  }
+`

@@ -3,36 +3,30 @@ import { breakpointsMax, colors, spaces } from "../../../constants/contants"
 
 export const StyledContactWrapper = styled.section`
   background-color: ${colors.lightGrey};
-  h2 {
-    padding-top: ${spaces.m};
-  }
+  padding-top: ${spaces.header};
+  padding-bottom: ${spaces.xxxl};
   .upper-row {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding-top: 50px;
-    @media ${breakpointsMax.m} {
-      flex-direction: column-reverse;
-    }
     img {
       max-height: 450px;
-      @media ${breakpointsMax.l} {
-        max-height: 350px;
-      }
+    }
+    form {
+      width: 60%;
+    }
+  }
+  .contact-info-wrapper {
+    .heading {
+      display: none;
     }
   }
   .contact-info {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     padding: 50px 0;
-    @media ${breakpointsMax.m} {
-      flex-direction: column;
-    }
     > div {
       display: flex;
-      @media ${breakpointsMax.m} {
-        padding: ${spaces.m} 0;
-      }
       p {
         width: 100%;
         padding-left: ${spaces.m};
@@ -40,6 +34,25 @@ export const StyledContactWrapper = styled.section`
       img {
         max-width: 35px;
         max-height: 35px;
+      }
+    }
+  }
+  @media ${breakpointsMax.m} {
+    .upper-row {
+      flex-direction: column;
+      align-items: flex-start;
+      img {
+        display: none;
+      }
+      form {
+        margin-top: ${spaces.xl};
+        width: 100%;
+      }
+    }
+    .contact-info {
+      flex-direction: column;
+      > div {
+        padding: ${spaces.m} 0;
       }
     }
   }

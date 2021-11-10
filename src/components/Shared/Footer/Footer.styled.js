@@ -39,7 +39,6 @@ export const StyledFooterWrapper = styled.div`
   a {
     text-decoration: none;
     color: ${colors.text};
-    font-size: ${fontSize.xs};
     vertical-align: top;
     line-height: 16px;
     :hover {

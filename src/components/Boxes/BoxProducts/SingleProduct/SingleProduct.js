@@ -31,6 +31,8 @@ const SingleProduct = ({ product, main }) => {
         </div>
         {main && singleProduct}
         {isOpen && singleProduct}
+      </div>
+      <div className="arrow-up">
         {!main && isOpen && <ArrowUp onClick={handleOpen} />}
       </div>
     </StyledSingleProduct>

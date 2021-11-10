@@ -32,20 +32,26 @@ export const StyledHeader = styled.header`
     height: 100%;
   }
   @media ${breakpointsMax.m} {
+    ${props =>
+      props.isMenuOpen
+        ? `    background-color: ${colors.whiteHue};
+    backdrop-filter: blur(3px);`
+        : ""}
+
     .menu-icon {
       width: 30px;
       height: 30px;
+      cursor: pointer;
     }
     .generic-wrapper {
       position: relative;
     }
     .menu-open {
       height: 100vh;
-      background-color: ${colors.whiteHue};
     }
     .navigation {
       position: absolute;
-      bottom: -80px;
+      bottom: -90px;
       right: 0;
       flex-direction: column;
       align-items: center;

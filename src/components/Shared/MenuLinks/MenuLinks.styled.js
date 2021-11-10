@@ -1,10 +1,5 @@
 import styled from "styled-components"
-import {
-  breakpointsMax,
-  colors,
-  fontSize,
-  spaces,
-} from "../../../constants/contants"
+import { breakpointsMax, colors, spaces } from "../../../constants/contants"
 
 export const StyledMenuLinks = styled.nav`
   ul {
@@ -13,9 +8,6 @@ export const StyledMenuLinks = styled.nav`
     list-style: none;
     margin: 0;
     padding-left: 1em;
-    @media ${breakpointsMax.m} {
-      flex-direction: column;
-    }
   }
   li {
     display: inline;
@@ -29,12 +21,20 @@ export const StyledMenuLinks = styled.nav`
   a {
     text-decoration: none;
     color: ${colors.text};
-    font-size: ${fontSize.xs};
     vertical-align: top;
     line-height: 16px;
     :hover {
       color: ${colors.primaryBlue};
       border-bottom: ${colors.borderBlue};
+    }
+  }
+
+  @media ${breakpointsMax.m} {
+    ul {
+      flex-direction: column;
+    }
+    li {
+      padding: ${spaces.l} 0;
     }
   }
 `

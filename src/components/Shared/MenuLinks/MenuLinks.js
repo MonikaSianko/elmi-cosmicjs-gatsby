@@ -5,7 +5,7 @@ const MenuLinks = ({ menuLinks, withIcons }) => {
   return (
     <StyledMenuLinks className="menu-links">
       <ul className="links">
-        {menuLinks.map(({ i, text, link, icon }) => (
+        {menuLinks.map(({ text, link, icon }) => (
           <li key={text}>
             {withIcons && <img src={icon.imgix_url} alt={text} />}
             <a href={link}>{text}</a>

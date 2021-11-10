@@ -7,14 +7,11 @@ import {
   borders,
 } from "../../../constants/contants"
 
-export const StyledForm = styled.div`
+export const StyledForm = styled.form`
   display: flex;
   flex-direction: column;
   align-items: flex-end;
-  width: 40%;
-  @media ${breakpointsMax.m} {
-    width: 100%;
-  }
+
   div {
     display: flex;
     flex-direction: column;

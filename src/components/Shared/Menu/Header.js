@@ -16,7 +16,7 @@ const Header = ({ menuLinks, logo }) => {
     setMenuOpen(prev => !prev)
   }
   return (
-    <StyledHeader>
+    <StyledHeader isMenuOpen={isMenuOpen}>
       <GenericWrapper
         className={("generic-wrapper", isMenuOpen ? "menu-open" : "")}
       >

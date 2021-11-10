@@ -24,6 +24,14 @@ export const StyledSingleProduct = styled.div`
     justify-content: space-between;
     align-items: center;
   }
+  .arrow-up {
+    display: flex;
+    justify-content: flex-end;
+  }
+  svg {
+    width: 30px;
+    height: 30px;
+  }
   .product {
     display: flex;
     align-items: center;
@@ -38,6 +46,7 @@ export const StyledSingleProduct = styled.div`
       object-fit: contain;
       margin-bottom: ${spaces.m};
     }
+
     @media ${breakpointsMax.m} {
       flex-direction: column;
       align-items: flex-start;

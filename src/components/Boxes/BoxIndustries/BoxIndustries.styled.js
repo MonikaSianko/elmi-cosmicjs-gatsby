@@ -13,6 +13,7 @@ export const StyledIndustries = styled.div`
     align-items: center;
     cursor: pointer;
     padding: ${spaces.m};
+
     :hover {
       position: relative;
       ::before {

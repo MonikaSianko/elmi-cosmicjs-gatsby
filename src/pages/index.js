@@ -1,15 +1,14 @@
 import React from "react"
 import { graphql } from "gatsby"
-import "../components/reset.css"
 
 import Hero from "../components/Boxes/BoxHero/BoxHero"
 import Navigation from "../components/Shared/Navigation/Navigation"
 import Specialization from "../components/Boxes/BoxSpecialization/BoxSpecialization"
-import Contact from "../components/Boxes/BoxContact/BoxContact"
 import SlickSlider from "../components/Shared/Slider/SlickSlider"
 import { useMediaQuery } from "react-responsive"
 import { breakpointsMax } from "../constants/contants"
 import Layout from "../components/Shared/Layout/Layout"
+import ContactInfo from "../components/Shared/ContactInfo/ContactInfo"
 
 // guery filtered by locale
 // query MyQuery($language: String) {
@@ -28,9 +27,7 @@ export default function HomePage({ data }) {
   const navigationData = homeData.navigation.metadata
   const specializationData = homeData.specialization.metadata
   const partnersData = homeData.partners.metadata.slider
-  const contactData = homeData.contact.metadata
-  const messages = homeData.messages
-
+  const contactInfo = homeData.contact.metadata
   const isMobile = useMediaQuery({ query: breakpointsMax.s })
   const isTablet = useMediaQuery({ query: breakpointsMax.m })
 
@@ -68,8 +65,7 @@ export default function HomePage({ data }) {
         content={partnersData}
         className="partners"
       />
-      {/* scroll has to be fixed using Context for active path */}
-      <Contact contactData={contactData} messages={messages} />
+      <ContactInfo contactInfo={contactInfo} />
     </Layout>
   )
 }
@@ -124,11 +120,21 @@ export const query = graphql`
                   }
                 }
               }
-              messages {
-                contact_text
-                form_email
-                form_message
-                form_send
+              contact {
+                metadata {
+                  info {
+                    details_text
+                    icon {
+                      imgix_url
+                    }
+                    id
+                    type_text
+                  }
+                  messages {
+                    title
+                    short_text
+                  }
+                }
               }
               navigation {
                 metadata {
@@ -149,18 +155,6 @@ export const query = graphql`
                       imgix_url
                     }
                     title
-                  }
-                }
-              }
-              contact {
-                metadata {
-                  id
-                  means_of_contact {
-                    details_text
-                    icon {
-                      imgix_url
-                    }
-                    type_text
                   }
                 }
               }
