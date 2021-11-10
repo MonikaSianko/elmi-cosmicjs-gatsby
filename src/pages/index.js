@@ -32,7 +32,11 @@ export default function HomePage({ data }) {
   const isTablet = useMediaQuery({ query: breakpointsMax.m })
 
   return (
-    <Layout menuLinks={menuLinks} logo={logo}>
+    <Layout
+      menuLinks={menuLinks}
+      logo={logo}
+      policy={globalData.privacy_policy.metadata}
+    >
       <Hero heroData={heroData} industriesData={industriesData} />
       {isTablet && (
         <SlickSlider
@@ -79,6 +83,12 @@ export const query = graphql`
             metadata {
               logo {
                 imgix_url
+              }
+              privacy_policy {
+                metadata {
+                  description
+                  title
+                }
               }
               menu_links {
                 metadata {

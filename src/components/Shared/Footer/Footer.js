@@ -1,14 +1,34 @@
-import React, { memo } from "react"
+import React, { memo, useState } from "react"
 import { GenericWrapper } from "../Generic/Generic.styles"
 import MenuLinks from "../MenuLinks/MenuLinks"
+import Modal from "../Modal/Modal"
 
 import { StyledFooterWrapper } from "./Footer.styled"
 
-const Footer = ({ menuLinks }) => {
+const Footer = ({ menuLinks, policy }) => {
+  const [isModalOpen, setOpenModal] = useState(false)
+  const { title, description } = policy
+  const handleOpenModal = () => {
+    setOpenModal(true)
+  }
+  const handleCloseModal = () => {
+    setOpenModal(false)
+  }
+  console.log(isModalOpen)
   return (
     <StyledFooterWrapper>
       <GenericWrapper className="generic-wrapper">
         <MenuLinks withIcons menuLinks={menuLinks} />
+        <button onClick={handleOpenModal}>{title}</button>
+
+        {isModalOpen && (
+          <Modal
+            title={title}
+            description={description}
+            closeText="close"
+            handleCloseModal={handleCloseModal}
+          />
+        )}
       </GenericWrapper>
     </StyledFooterWrapper>
   )

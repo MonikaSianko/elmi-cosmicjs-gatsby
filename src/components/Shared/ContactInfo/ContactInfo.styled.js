@@ -9,9 +9,7 @@ import {
 
 export const StyledContactInfo = styled.div`
   background-color: ${colors.lightGrey};
-  h2 {
-    padding: ${spaces.xxl} 0 ${spaces.l} 0;
-  }
+
   .contact-info {
     display: flex;
     justify-content: space-between;

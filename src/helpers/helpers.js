@@ -1,6 +1,6 @@
 // CONSTANTS
 
-export const empty = undefined || ""
+export const empty = undefined || "" || null
 //FUNCTIONS
 
 export const toBoolean = string => {
