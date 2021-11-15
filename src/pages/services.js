@@ -16,7 +16,11 @@ const ServicesPage = ({ data }) => {
   const servicesContent = servicesData.services
 
   return (
-    <Layout logo={logo} menuLinks={menuLinks}>
+    <Layout
+      menuLinks={menuLinks}
+      logo={logo}
+      policy={globalData.privacy_policy.metadata}
+    >
       <Navigation navigationData={navigationData} border />
       <BoxServices servicesContent={servicesContent} />
     </Layout>
@@ -34,6 +38,12 @@ export const query = graphql`
             metadata {
               logo {
                 imgix_url
+              }
+              privacy_policy {
+                metadata {
+                  description
+                  title
+                }
               }
               menu_links {
                 metadata {

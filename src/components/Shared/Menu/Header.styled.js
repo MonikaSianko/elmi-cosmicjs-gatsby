@@ -6,6 +6,7 @@ import {
   spaces,
   zIndex,
 } from "../../../constants/contants"
+import { fadeOut } from "../Styles/Keyframes.styles"
 
 export const StyledHeader = styled.header`
   width: 100%;
@@ -42,6 +43,7 @@ export const StyledHeader = styled.header`
       width: 30px;
       height: 30px;
       cursor: pointer;
+      animation: ${fadeOut} 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
     }
     .generic-wrapper {
       position: relative;

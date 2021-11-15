@@ -6,7 +6,7 @@ import {
   radius,
   spaces,
 } from "../../../../constants/contants"
-import { card } from "../../../Shared/Generic/Generic.styles"
+import { card } from "../../../Shared/Styles/Generic.styles"
 
 const verticalCard = css`
   flex-direction: column-reverse;

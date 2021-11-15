@@ -1,6 +1,6 @@
 import React, { memo, useState } from "react"
 import Description from "../../../Shared/Description/Description"
-import { ArrowDown, ArrowUp } from "../../../Shared/Generic/Generic.styles"
+import { ArrowDown, ArrowUp } from "../../../Shared/Styles/Generic.styles"
 
 import { StyledSingleProduct } from "./SingleProduct.styled"
 
@@ -18,7 +18,7 @@ const SingleProduct = ({ product, main }) => {
       description={description}
       src={image.imgix_url}
       alt={title}
-      className="product main"
+      className="product"
       hideTitle
     />
   )

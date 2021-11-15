@@ -1,6 +1,6 @@
 import React, { memo } from "react"
 import Description from "../../Shared/Description/Description"
-import { GenericWrapper } from "../../Shared/Generic/Generic.styles"
+import { GenericWrapper } from "../../Shared/Styles/Generic.styles"
 import { StyledBoxAbout } from "./BoxAbout.styled"
 import Person from "./Person/Person"
 

@@ -1,6 +1,6 @@
 import React, { memo } from "react"
 import { empty } from "../../../helpers/helpers"
-import { ArrowDown, GenericWrapper } from "../Generic/Generic.styles"
+import { ArrowDown, GenericWrapper } from "../Styles/Generic.styles"
 
 import { Card, StyledNavigationWrapper } from "./Navigation.styled"
 

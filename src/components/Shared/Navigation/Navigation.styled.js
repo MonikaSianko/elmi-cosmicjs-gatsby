@@ -8,7 +8,7 @@ import {
   radius,
   spaces,
 } from "../../../constants/contants"
-import { card } from "../Generic/Generic.styles"
+import { card, scaleUp } from "../Styles/Generic.styles"
 
 export const StyledNavigationWrapper = styled.div`
   padding: ${props => (props.theme === "grey" ? "85px 0" : "125px 0 85px 0")};
@@ -20,7 +20,7 @@ export const StyledNavigationWrapper = styled.div`
     align-items: center;
     justify-content: ${props =>
       props.layout ? `${props.layout}` : "space-around"};
-    @media ${breakpointsMax.l} {
+    @media ${breakpointsMax.m} {
       flex-direction: column;
     }
   }

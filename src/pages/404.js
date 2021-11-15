@@ -2,7 +2,7 @@ import { graphql } from "gatsby"
 import * as React from "react"
 import styled from "styled-components"
 import Button from "../components/Shared/Buttons/Button"
-import { GenericWrapper } from "../components/Shared/Generic/Generic.styles"
+import { GenericWrapper } from "../components/Shared/Styles/Generic.styles"
 import { colors, radius, shadows, spaces } from "../constants/contants"
 
 const NotFoundPage = ({ data }) => {
@@ -13,7 +13,7 @@ const NotFoundPage = ({ data }) => {
   return (
     <Styled404 bgUrl={bgUrl}>
       <GenericWrapper className="generic-wrapper">
-        <div className="modal">
+        <div className="card">
           <h1>{notFoundData.title}</h1>
           <h2>{notFoundData.text}</h2>
           <img src={notFoundData.icon.imgix_url} alt={notFoundData.title}></img>
@@ -39,7 +39,7 @@ const Styled404 = styled.section`
     display: flex;
     align-items: center;
   }
-  .modal {
+  .card {
     background: ${colors.whiteHue};
     box-shadow: ${shadows.cardShadow};
     padding: ${spaces.xl};

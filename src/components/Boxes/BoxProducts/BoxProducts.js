@@ -1,5 +1,5 @@
 import React, { memo } from "react"
-import { GenericWrapper } from "../../Shared/Generic/Generic.styles"
+import { GenericWrapper } from "../../Shared/Styles/Generic.styles"
 
 import { StyledBoxProducts } from "./BoxProducts.styled"
 import SingleProduct from "./SingleProduct/SingleProduct"
@@ -23,7 +23,7 @@ const BoxProducts = ({ navigationData, productGroups }) => {
               .map((product, i) => (
                 <>
                   <div key={i}>
-                    <SingleProduct key={i} product={product.metadata} main />
+                    <SingleProduct product={product.metadata} main />
                   </div>
                   <div>
                     {product.metadata.single_product.map((el, i) => (

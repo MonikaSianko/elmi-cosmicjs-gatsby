@@ -112,6 +112,9 @@ section {
 *[hidden] {
   display: none;
 }
+html {
+  scroll-behavior: smooth;
+}
 body {
   line-height: 1;
   overflow-x: hidden;

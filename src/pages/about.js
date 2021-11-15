@@ -15,7 +15,11 @@ const AboutPage = ({ data }) => {
   const teamMembers = aboutData.team_members
 
   return (
-    <Layout logo={logo} menuLinks={menuLinks}>
+    <Layout
+      menuLinks={menuLinks}
+      logo={logo}
+      policy={globalData.privacy_policy.metadata}
+    >
       <BoxAbout
         messages={messages}
         aboutDescription={aboutDescription}
@@ -36,6 +40,12 @@ export const query = graphql`
             metadata {
               logo {
                 imgix_url
+              }
+              privacy_policy {
+                metadata {
+                  description
+                  title
+                }
               }
               menu_links {
                 metadata {

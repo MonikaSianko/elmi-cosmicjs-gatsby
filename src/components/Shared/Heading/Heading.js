@@ -1,7 +1,7 @@
 import React from "react"
 import styled from "styled-components"
 import { spaces } from "../../../constants/contants"
-import { GenericWrapper } from "../Generic/Generic.styles"
+import { GenericWrapper } from "../Styles/Generic.styles"
 
 const Heading = ({ title, short_text }) => {
   return (
@@ -15,6 +15,7 @@ const Heading = ({ title, short_text }) => {
 }
 
 export default Heading
+
 const StyledHeading = styled.div`
   h2 {
     padding-bottom: ${spaces.m};

@@ -1,7 +1,7 @@
 import React from "react"
 import styled from "styled-components"
 import { radius, shadows } from "../../../constants/contants"
-import { GenericWrapper } from "../Generic/Generic.styles"
+import { GenericWrapper } from "../Styles/Generic.styles"
 
 export default function Map() {
   return (
@@ -14,6 +14,7 @@ export default function Map() {
           scrolling="no"
           marginheight="0"
           marginwidth="0"
+          title="elmi localization"
         ></iframe>
       </GenericWrapper>
     </StyledMap>

@@ -45,10 +45,9 @@ export default function HomePage({ data }) {
             dots: false,
             infinite: true,
             slidesToShow: isMobile ? 2 : 3,
-            slidesToScroll: 1,
-            centerMode: true,
+            slidesToScroll: isMobile ? 2 : 3,
             autoplay: true,
-            speed: 600,
+            speed: 400,
           }}
           className="industries"
           withTitle
@@ -60,9 +59,8 @@ export default function HomePage({ data }) {
         settings={{
           dots: false,
           infinite: true,
-          slidesToShow: isTablet ? 1 : 3,
-          slidesToScroll: 1,
-          centerMode: true,
+          slidesToShow: isTablet ? 2 : 3,
+          slidesToScroll: isTablet ? 2 : 3,
           autoplay: true,
           speed: 400,
         }}

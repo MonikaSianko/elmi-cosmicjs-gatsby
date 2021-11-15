@@ -1,6 +1,6 @@
 import React from "react"
 import Slider from "react-slick"
-import { GenericWrapper } from "../Generic/Generic.styles"
+import { GenericWrapper } from "../Styles/Generic.styles"
 import { StyledSlickSlider } from "./SlickSlider.styled"
 
 export default function SlickSlider({

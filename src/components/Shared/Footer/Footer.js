@@ -1,5 +1,5 @@
 import React, { memo, useState } from "react"
-import { GenericWrapper } from "../Generic/Generic.styles"
+import { GenericWrapper } from "../Styles/Generic.styles"
 import MenuLinks from "../MenuLinks/MenuLinks"
 import Modal from "../Modal/Modal"
 
@@ -18,8 +18,9 @@ const Footer = ({ menuLinks, policy }) => {
   return (
     <StyledFooterWrapper>
       <GenericWrapper className="generic-wrapper">
-        <MenuLinks withIcons menuLinks={menuLinks} />
-        <button onClick={handleOpenModal}>{title}</button>
+        <MenuLinks withIcons menuLinks={menuLinks}>
+          <button onClick={handleOpenModal}>{title}</button>
+        </MenuLinks>
 
         {isModalOpen && (
           <Modal

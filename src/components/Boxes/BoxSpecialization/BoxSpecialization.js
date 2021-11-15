@@ -1,5 +1,5 @@
 import React from "react"
-import { GenericWrapper } from "../../Shared/Generic/Generic.styles"
+import { GenericWrapper } from "../../Shared/Styles/Generic.styles"
 import { StyledSpecializationWrapper } from "./BoxSpecialization.styled"
 
 const Specialization = ({ specializationData }) => {

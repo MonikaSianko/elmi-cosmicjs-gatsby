@@ -1,10 +1,10 @@
 import styled from "styled-components"
 import {
-  breakpointsMax,
   fontSize,
   radius,
   spaces,
   borders,
+  shadows,
 } from "../../../constants/contants"
 
 export const StyledForm = styled.form`
@@ -20,9 +20,10 @@ export const StyledForm = styled.form`
   }
   input,
   textarea {
-    border: ${borders.darkGrey};
+    border: none;
     border-radius: ${radius.s};
     padding: ${spaces.xs};
+    box-shadow: ${shadows.cardShadow};
     :focus {
       outline: none;
       border: ${borders.blue};

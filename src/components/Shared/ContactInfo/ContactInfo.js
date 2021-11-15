@@ -1,5 +1,5 @@
 import React, { memo } from "react"
-import { GenericWrapper } from "../Generic/Generic.styles"
+import { GenericWrapper } from "../Styles/Generic.styles"
 import Heading from "../Heading/Heading"
 import { StyledContactInfo } from "./ContactInfo.styled"
 
@@ -7,8 +7,8 @@ const ContactInfo = ({ contactInfo }) => {
   const { title, short_text } = contactInfo.messages
   return (
     <StyledContactInfo id="contact-box" className="contact-info-wrapper">
+      <Heading title={title} short_text={short_text} className="heading" />
       <GenericWrapper className="generic-wrapper">
-        <Heading title={title} short_text={short_text} className="heading" />
         <div className="contact-info">
           {contactInfo.info.map((el, i) => (
             <div key={i}>

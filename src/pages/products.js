@@ -17,7 +17,11 @@ export default function ProductsPage({ data }) {
   const productGroups = productsData.product_groups
 
   return (
-    <Layout menuLinks={menuLinks} logo={logo}>
+    <Layout
+      menuLinks={menuLinks}
+      logo={logo}
+      policy={globalData.privacy_policy.metadata}
+    >
       <Navigation navigationData={navigationData} layout="center" border />
       <BoxProducts
         navigationData={navigationData}
@@ -36,6 +40,12 @@ export const query = graphql`
             metadata {
               logo {
                 imgix_url
+              }
+              privacy_policy {
+                metadata {
+                  description
+                  title
+                }
               }
               menu_links {
                 metadata {

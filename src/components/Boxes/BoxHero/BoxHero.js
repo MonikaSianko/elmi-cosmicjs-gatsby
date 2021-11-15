@@ -3,7 +3,7 @@ import { StyledHeroWrapper } from "./BoxHero.styled"
 import ButtonsBox from "../../Shared/Buttons/ButtonsBox"
 
 import BoxIndustries from "../BoxIndustries/BoxIndustries"
-import { GenericWrapper } from "../../Shared/Generic/Generic.styles"
+import { GenericWrapper } from "../../Shared/Styles/Generic.styles"
 import { breakpointsMax } from "../../../constants/contants"
 import { useMediaQuery } from "react-responsive"
 

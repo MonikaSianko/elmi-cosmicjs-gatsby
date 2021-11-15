@@ -1,9 +1,16 @@
 import React from "react"
 import styled from "styled-components"
-import { colors, radius, shadows, spaces } from "../../../constants/contants"
+import {
+  breakpointsMax,
+  colors,
+  fontSize,
+  radius,
+  shadows,
+  spaces,
+} from "../../../constants/contants"
 import { empty } from "../../../helpers/helpers"
 import Button from "../Buttons/Button"
-import { GenericWrapper } from "../Generic/Generic.styles"
+import { GenericWrapper } from "../Styles/Generic.styles"
 
 const Modal = ({
   title,
@@ -70,12 +77,8 @@ const StyledModal = styled.div`
     div {
       height: 100%;
     }
-    h1,
-    h2 {
-      color: ${colors.text};
-    }
-    h2 {
-      padding: ${spaces.l} 0;
+    h1 {
+      font-size: ${fontSize.xl};
     }
     .description {
       text-overflow: ellipsis;
@@ -99,6 +102,14 @@ const StyledModal = styled.div`
         border-radius: ${radius.button};
         transition: all 1s ease 0s;
       }
+    }
+  }
+  @media ${breakpointsMax.m} {
+    padding-top: 80px;
+    .modal {
+      width: 90%;
+      height: 80%;
+      padding: ${spaces.s};
     }
   }
 `

@@ -7,12 +7,18 @@ import {
   colors,
   breakpointsMax,
 } from "../../../../constants/contants"
+import {
+  fadeIn,
+  growDown,
+  openSmoothly,
+} from "../../../Shared/Styles/Keyframes.styles"
 
 export const StyledSingleProduct = styled.div`
   padding: 1.5em;
   margin-bottom: ${spaces.xl};
   border: ${borders.lightGrey};
   border-radius: ${radius.s};
+  animation: ${openSmoothly} 1s ease-in;
   h3 {
     text-transform: uppercase;
     font-weight: ${fontWeight.medium};
@@ -36,6 +42,7 @@ export const StyledSingleProduct = styled.div`
     display: flex;
     align-items: center;
     justify-content: space-evenly;
+    animation: ${fadeIn} 1s ease-in both;
     .description {
       padding: ${spaces.m} 0;
       padding-right: ${spaces.m};

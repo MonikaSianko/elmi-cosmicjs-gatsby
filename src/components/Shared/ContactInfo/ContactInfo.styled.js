@@ -9,11 +9,11 @@ import {
 
 export const StyledContactInfo = styled.div`
   background-color: ${colors.lightGrey};
-
+  padding: ${spaces.xl} 0;
   .contact-info {
     display: flex;
-    justify-content: space-between;
-    padding: 50px 0;
+    justify-content: space-around;
+    padding-top: ${spaces.xl};
     > div {
       display: flex;
       align-items: center;

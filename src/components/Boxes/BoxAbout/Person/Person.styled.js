@@ -6,7 +6,7 @@ import {
   fontWeight,
   borders,
 } from "../../../../constants/contants"
-import { card } from "../../../Shared/Generic/Generic.styles"
+import { card } from "../../../Shared/Styles/Generic.styles"
 
 export const StyledPerson = styled.div`
   ${card}

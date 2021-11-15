@@ -1,7 +1,7 @@
 import React from "react"
 import ContactInfo from "../../Shared/ContactInfo/ContactInfo"
 import Form from "../../Shared/Form/Form"
-import { GenericWrapper } from "../../Shared/Generic/Generic.styles"
+import { GenericWrapper } from "../../Shared/Styles/Generic.styles"
 import Heading from "../../Shared/Heading/Heading"
 import Map from "../../Shared/Map/Map"
 import { StyledContactWrapper } from "./BoxContact.styled"

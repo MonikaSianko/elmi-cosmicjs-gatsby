@@ -1,7 +1,7 @@
 import React, { memo } from "react"
 import { StyledMenuLinks } from "./MenuLinks.styled"
 
-const MenuLinks = ({ menuLinks, withIcons }) => {
+const MenuLinks = ({ menuLinks, withIcons, children }) => {
   return (
     <StyledMenuLinks className="menu-links">
       <ul className="links">
@@ -11,6 +11,7 @@ const MenuLinks = ({ menuLinks, withIcons }) => {
             <a href={link}>{text}</a>
           </li>
         ))}
+        {children}
       </ul>
     </StyledMenuLinks>
   )

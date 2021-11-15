@@ -1,14 +1,12 @@
-import styled, { css } from "styled-components"
+import styled from "styled-components"
 import {
   breakpointsMax,
   colors,
   fontSize,
   fontWeight,
-  radius,
-  shadows,
   spaces,
 } from "../../../../constants/contants"
-import { card } from "../../../Shared/Generic/Generic.styles"
+import { card } from "../../../Shared/Styles/Generic.styles"
 
 export const StyledServiceCard = styled.div`
   padding: 4em;

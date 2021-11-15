@@ -13,7 +13,7 @@ export const StyledContactWrapper = styled.section`
       max-height: 450px;
     }
     form {
-      width: 60%;
+      width: 50%;
     }
   }
   .contact-info-wrapper {

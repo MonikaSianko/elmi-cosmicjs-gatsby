@@ -16,14 +16,25 @@ export const card = css`
   border-radius: ${radius.m};
 `
 
+export const scaleUp = css`
+  transition: all 0.2s ease-in-out;
+  :hover {
+    transform: scale(1.2);
+  }
+`
+
 export const ArrowDown = styled(FiArrowDownCircle)`
   color: ${colors.primaryBlue};
   width: 2.5em;
   height: 2.5em;
   cursor: pointer;
+  ${scaleUp}
 `
 export const ArrowUp = styled(ArrowDown)`
   transform: rotate(180deg);
+  :hover {
+    transform: scale(1.2) rotate(180deg);
+  }
 `
 
 export const GenericWrapper = styled.div`

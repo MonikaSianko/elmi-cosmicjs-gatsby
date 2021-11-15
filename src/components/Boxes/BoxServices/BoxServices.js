@@ -1,6 +1,6 @@
 import React from "react"
 import { memo } from "react"
-import { GenericWrapper } from "../../Shared/Generic/Generic.styles"
+import { GenericWrapper } from "../../Shared/Styles/Generic.styles"
 import { StyledServicesWrapper } from "./BoxServices.styled"
 import ServiceCard from "./ServiceCard/ServiceCard"
 
