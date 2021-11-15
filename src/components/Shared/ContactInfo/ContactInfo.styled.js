@@ -12,7 +12,7 @@ export const StyledContactInfo = styled.div`
   padding: ${spaces.xl} 0;
   .contact-info {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     padding-top: ${spaces.xl};
     > div {
       display: flex;

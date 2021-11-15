@@ -19,7 +19,7 @@ export const StyledNavigationWrapper = styled.div`
     display: flex;
     align-items: center;
     justify-content: ${props =>
-      props.layout ? `${props.layout}` : "space-around"};
+      props.layout ? `${props.layout}` : "space-between"};
     @media ${breakpointsMax.m} {
       flex-direction: column;
     }

@@ -38,7 +38,7 @@ export const ArrowUp = styled(ArrowDown)`
 `
 
 export const GenericWrapper = styled.div`
-  max-width: 1240px;
+  max-width: 1152px;
   height: 100%;
   padding: 0 ${spaces.xxl};
   margin: 0 auto;
@@ -79,18 +79,9 @@ export const GenericWrapper = styled.div`
     h1 {
       font-size: ${fontSize.xl};
     }
-    h2 {
-      font-size: ${fontSize.ml};
-    }
-    h3,
-    h4 {
+
+    a {
       font-size: ${fontSize.m};
-    }
-    h5 {
-      font-size: ${fontSize.s};
-    }
-    p {
-      font-size: ${fontSize.xs};
     }
   }
 `
