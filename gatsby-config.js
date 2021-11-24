@@ -10,7 +10,7 @@ module.exports = {
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
-    `gatsby-plugin-image`,
+
     // {
     //   resolve: `gatsby-source-filesystem`,
     //   options: {
@@ -36,6 +36,13 @@ module.exports = {
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,
+    {
+      resolve: `gatsby-plugin-nprogress`,
+      options: {
+        // Disable the loading spinner.
+        showSpinner: false,
+      },
+    },
     {
       resolve: "gatsby-source-cosmicjs",
       options: {
@@ -67,22 +74,7 @@ module.exports = {
     },
     `gatsby-plugin-styled-components`,
     "gatsby-plugin-breakpoints",
-    {
-      resolve: `gatsby-transformer-remark`,
-      options: {
-        plugins: [
-          {
-            resolve: `gatsby-remark-images-contentful`,
-            options: {
-              // It's important to specify the maxWidth (in pixels) of
-              // the content container as this plugin uses this as the
-              // base for generating different widths of each image.
-              maxWidth: 590,
-            },
-          },
-        ],
-      },
-    },
+
     {
       resolve: `gatsby-plugin-mdx`,
     },

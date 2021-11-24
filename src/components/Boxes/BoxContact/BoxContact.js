@@ -9,7 +9,7 @@ import { StyledContactWrapper } from "./BoxContact.styled"
 function BoxContact({ contactData }) {
   const { messages, image } = contactData
   const { title, short_text } = contactData.contact_details.metadata.messages
-  console.log(contactData)
+
   return (
     <StyledContactWrapper>
       <Heading title={title} short_text={short_text} />

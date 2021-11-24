@@ -12,7 +12,7 @@ export const StyledSpecializationWrapper = styled.div`
   padding: 80px 0;
   img {
     width: auto;
-    max-height: 370px;
+    height: 300px;
     right: 0;
     border-radius: ${radius.m};
     @media ${breakpointsMax.l} {

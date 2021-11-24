@@ -1,6 +1,8 @@
 import React, { useState } from "react"
+import { EMAIL, MESSAGE, NAME, SUBJECT, TEXT } from "../../../constants"
 import Button from "../Buttons/Button"
 import { StyledForm } from "./Form.styles"
+import Input from "./Input/Input"
 
 function Form({ messages }) {
   const { form_email, form_name, form_message, form_send } = messages
@@ -8,28 +10,38 @@ function Form({ messages }) {
   const [name, setName] = useState("")
   const [subject, setSubject] = useState("")
   const [message, setMessage] = useState("")
-  const [errorMessages, setErrorMessages] = useState([])
-  const [showErrors, setShowErrors] = useState(false)
+  console.log(email)
   return (
     <StyledForm>
-      <div>
-        <label htmlFor="email" onChange={e => setEmail(e.target.value)}>
-          {form_email}
-        </label>
-        <input type="email" />
-      </div>
-      <div>
-        <label htmlFor="name">{form_name}</label>
-        <input type="text" onChange={e => setName(e.target.value)} />
-      </div>
-      <div>
-        <label htmlFor="subject">subject</label>
-        <input type="text" onChange={e => setSubject(e.target.value)} />
-      </div>
-      <div>
-        <label htmlFor="form_message">{form_message}</label>
-        <textarea onChange={e => setMessage(e.target.value)} />
-      </div>
+      <Input
+        type={EMAIL}
+        inputType={EMAIL}
+        setInputValue={setEmail}
+        inputValue={email}
+        labelText="email"
+      />
+      <Input
+        type={TEXT}
+        inputType={NAME}
+        setInputValue={setName}
+        inputValue={name}
+        labelText="name and surname"
+      />
+      <Input
+        type={TEXT}
+        inputType={SUBJECT}
+        setInputValue={setSubject}
+        inputValue={subject}
+        labelText="subject"
+      />
+      <Input
+        inputType={MESSAGE}
+        setInputValue={setMessage}
+        inputValue={message}
+        labelText="message"
+        textarea
+      />
+
       <Button href="#" text={form_send} type="button" />
     </StyledForm>
   )

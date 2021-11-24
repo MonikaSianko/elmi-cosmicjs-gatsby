@@ -5,7 +5,6 @@ import { StyledServicesWrapper } from "./BoxServices.styled"
 import ServiceCard from "./ServiceCard/ServiceCard"
 
 const BoxServices = ({ servicesContent }) => {
-  console.log(servicesContent)
   return (
     <StyledServicesWrapper>
       <GenericWrapper className="generic-wrapper">

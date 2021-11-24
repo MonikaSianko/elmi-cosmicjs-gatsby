@@ -1,0 +1,5 @@
+export const EMAIL = "email"
+export const MESSAGE = "message"
+export const NAME = "text"
+export const SUBJECT = "text"
+export const TEXT = "text"
