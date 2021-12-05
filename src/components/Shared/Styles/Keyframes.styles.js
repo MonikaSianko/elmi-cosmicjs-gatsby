@@ -41,3 +41,8 @@ export const scaleUp = keyframes`
             transform: scale(1);
   }
 `
+
+export const spin = keyframes`
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+`

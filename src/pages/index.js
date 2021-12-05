@@ -32,43 +32,45 @@ export default function HomePage({ data }) {
   const isTablet = useMediaQuery({ query: breakpointsMax.m })
 
   return (
-    <Layout
-      menuLinks={menuLinks}
-      logo={logo}
-      policy={globalData.privacy_policy.metadata}
-    >
-      <Hero heroData={heroData} industriesData={industriesData} />
-      {isTablet && (
+    <>
+      <Layout
+        menuLinks={menuLinks}
+        logo={logo}
+        policy={globalData.privacy_policy.metadata}
+      >
+        <Hero heroData={heroData} industriesData={industriesData} />
+        {isTablet && (
+          <SlickSlider
+            content={industriesData}
+            settings={{
+              dots: false,
+              infinite: true,
+              slidesToShow: isMobile ? 2 : 3,
+              slidesToScroll: isMobile ? 2 : 3,
+              autoplay: true,
+              speed: 400,
+            }}
+            className="industries"
+            withTitle
+          />
+        )}
+        <Navigation navigationData={navigationData} theme="grey" />
+        <Specialization specializationData={specializationData} />
         <SlickSlider
-          content={industriesData}
           settings={{
             dots: false,
             infinite: true,
-            slidesToShow: isMobile ? 2 : 3,
-            slidesToScroll: isMobile ? 2 : 3,
+            slidesToShow: isTablet ? 2 : 3,
+            slidesToScroll: isTablet ? 2 : 3,
             autoplay: true,
             speed: 400,
           }}
-          className="industries"
-          withTitle
+          content={partnersData}
+          className="partners"
         />
-      )}
-      <Navigation navigationData={navigationData} theme="grey" />
-      <Specialization specializationData={specializationData} />
-      <SlickSlider
-        settings={{
-          dots: false,
-          infinite: true,
-          slidesToShow: isTablet ? 2 : 3,
-          slidesToScroll: isTablet ? 2 : 3,
-          autoplay: true,
-          speed: 400,
-        }}
-        content={partnersData}
-        className="partners"
-      />
-      <ContactInfo contactInfo={contactInfo} />
-    </Layout>
+        <ContactInfo contactInfo={contactInfo} />
+      </Layout>
+    </>
   )
 }
 

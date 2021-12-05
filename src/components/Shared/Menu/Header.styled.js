@@ -43,7 +43,9 @@ export const StyledHeader = styled.header`
       width: 30px;
       height: 30px;
       cursor: pointer;
-      animation: ${fadeOut} 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+      &.close {
+        animation: ${fadeOut} 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+      }
     }
     .generic-wrapper {
       position: relative;
@@ -52,17 +54,24 @@ export const StyledHeader = styled.header`
       height: 100vh;
     }
     .navigation {
+      display: none;
+    }
+    .open {
+      display: block;
       position: absolute;
       bottom: -90px;
       right: 0;
-      flex-direction: column;
-      align-items: center;
       width: 100%;
       height: 100%;
     }
 
     .menu-links {
       padding-bottom: ${spaces.m};
+      li {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
     }
   }
 `

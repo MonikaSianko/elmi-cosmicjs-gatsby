@@ -1,13 +1,30 @@
-import React, { memo } from "react"
+import React, { memo, useState, useEffect } from "react"
 import Footer from "../Footer/Footer"
+import Loader from "../Loader/Loader"
 import Header from "../Menu/Header"
 
 const Layout = ({ children, menuLinks, logo, policy }) => {
+  const [isLoading, setIsLoading] = useState(true)
+
+  useEffect(() => {
+    if (isLoading) {
+      setTimeout(() => {
+        setIsLoading(false)
+      }, 2000)
+    }
+  }, [isLoading])
+
   return (
     <>
-      <Header menuLinks={menuLinks} logo={logo} />
-      {children}
-      <Footer menuLinks={menuLinks} policy={policy} />
+      {isLoading ? (
+        <Loader classNames={isLoading ? "loader" : "hide-loader"} />
+      ) : (
+        <>
+          <Header menuLinks={menuLinks} logo={logo} />
+          {children}
+          <Footer menuLinks={menuLinks} policy={policy} />
+        </>
+      )}
     </>
   )
 }

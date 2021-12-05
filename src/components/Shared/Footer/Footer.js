@@ -14,7 +14,7 @@ const Footer = ({ menuLinks, policy }) => {
   const handleCloseModal = () => {
     setOpenModal(false)
   }
-  console.log(isModalOpen)
+
   return (
     <StyledFooterWrapper>
       <GenericWrapper className="generic-wrapper">

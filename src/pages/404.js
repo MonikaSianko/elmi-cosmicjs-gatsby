@@ -9,7 +9,7 @@ const NotFoundPage = ({ data }) => {
   const notFoundData =
     data.allCosmicjsAllPages.nodes[0].metadata.not_found.metadata
   const bgUrl = notFoundData.background.imgix_url
-  console.log(bgUrl)
+
   return (
     <Styled404 bgUrl={bgUrl}>
       <GenericWrapper className="generic-wrapper">

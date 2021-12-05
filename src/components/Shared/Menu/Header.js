@@ -1,4 +1,4 @@
-import React, { memo, useState } from "react"
+import React, { memo, useEffect, useState } from "react"
 
 import LanguagePicker from "../LanguagePicker/LanguagePicker"
 import { StyledHeader } from "./Header.styled"
@@ -32,15 +32,17 @@ const Header = ({ menuLinks, logo }) => {
           {isMobile ? (
             <>
               {isMenuOpen ? (
-                <CloseMenu onClick={toggleMenu} className="menu-icon" />
+                <>
+                  <CloseMenu onClick={toggleMenu} className="menu-icon close" />
+                  <div
+                    className={isMenuOpen ? "navigation open" : "navigation"}
+                  >
+                    <MenuLinks menuLinks={menuLinks} withIcons />
+                    <LanguagePicker />
+                  </div>
+                </>
               ) : (
                 <MenuIcon onClick={toggleMenu} className="menu-icon" />
-              )}
-              {isMenuOpen && (
-                <div className="navigation">
-                  <MenuLinks menuLinks={menuLinks} withIcons />
-                  <LanguagePicker />
-                </div>
               )}
             </>
           ) : (
