@@ -1,10 +1,10 @@
 import React, { useState } from "react"
-import { EMAIL, MESSAGE, NAME, SUBJECT, TEXT } from "../../../constants"
-import Button from "../Buttons/Button"
-import { StyledForm } from "./Form.styles"
-import Input from "./Input/Input"
+import { EMAIL, MESSAGE, NAME, SUBJECT, TEXT } from "../../../../constants"
+import Button from "../../../Shared/Buttons/Button"
+import Input from "../../../Shared/Form/Input/Input"
+import { StyledForm } from "./ContactForm.styles"
 
-function Form({ messages }) {
+function ContactForm({ messages }) {
   const { form_email, form_name, form_message, form_send } = messages
   const [email, setEmail] = useState("")
   const [name, setName] = useState("")
@@ -47,4 +47,4 @@ function Form({ messages }) {
   )
 }
 
-export default Form
+export default ContactForm

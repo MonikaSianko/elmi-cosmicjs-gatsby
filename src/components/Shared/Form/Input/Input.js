@@ -1,6 +1,6 @@
-import { empty } from "@apollo/client"
 import React, { useState } from "react"
 import { inputValidation } from "../../../../helpers/validations"
+import { StyledInput } from "./Input.styled"
 
 const Input = ({
   type,
@@ -17,8 +17,21 @@ const Input = ({
       setIsBlured(prev => !prev)
     }
   }
+  const handleErrorChange = () => {
+    if (validation === "success") {
+      return "success"
+    }
+    if (
+      validation === "incorrext text" ||
+      validation === "text has to be longer than 3" ||
+      validation === "cant be empty"
+    ) {
+      return "error"
+    }
+    return ""
+  }
   return (
-    <div>
+    <StyledInput>
       <label htmlFor={inputType}>{labelText}</label>
       {textarea !== undefined ? (
         <textarea
@@ -34,8 +47,8 @@ const Input = ({
           value={inputValue}
         />
       )}
-      {isBlured && <error>{validation}</error>}
-    </div>
+      {isBlured && <span className={handleErrorChange()}>{validation}</span>}
+    </StyledInput>
   )
 }
 

@@ -1,23 +1,15 @@
 import styled from "styled-components"
 import {
-  fontSize,
-  radius,
-  spaces,
   borders,
+  colors,
+  fontSize,
+  fontWeight,
+  radius,
   shadows,
-} from "../../../constants/contants"
+  spaces,
+} from "../../../../constants/contants"
 
-export const StyledForm = styled.form`
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-
-  div {
-    display: flex;
-    flex-direction: column;
-    padding: 0.5em 0;
-    width: 100%;
-  }
+export const StyledInput = styled.div`
   input,
   textarea {
     border: none;
@@ -41,5 +33,20 @@ export const StyledForm = styled.form`
   label {
     font-size: ${fontSize.xs};
     text-transform: lowercase;
+  }
+  span {
+    margin-top: 0.5em;
+    padding: 0.5em;
+    border-radius: ${radius.s};
+    font-size: ${fontSize.xxs};
+    font-weight: ${fontWeight.light};
+  }
+  .error {
+    background-color: ${colors.lightRed};
+    color: ${colors.red};
+  }
+  .success {
+    background-color: ${colors.lightGreen};
+    color: ${colors.green};
   }
 `

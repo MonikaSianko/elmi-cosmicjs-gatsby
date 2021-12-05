@@ -27,6 +27,8 @@ export const colors = {
     "linear-gradient(90.12deg, rgba(255, 255, 255, 0.7) 21.94%, rgba(255, 255, 255, 0.567) 66.39%, rgba(255, 255, 255, 0) 94.07%)",
   whiteHue: "rgba(255, 255, 255, 0.85)",
   lightGrey: "#F5F5F5",
+  darkGrey: "#7E7E7E",
+  loaderGrey: "#f3f3f3",
   lightBlue: "#EDF6FD",
   lightBlueHue: "rgba(237, 246, 253, 0.85)",
   secondaryBlue: "#61CCF4",
@@ -37,6 +39,10 @@ export const colors = {
     "linear-gradient(180deg, #00A8E8 0%, #2EB9EE 47.16%, #61CCF4 100%)",
   buttonGradient:
     "linear-gradient(90deg, #00A8E8 0%, #2EB9EE 52%, #61CCF4 110.26%)",
+  lightRed: "#FFE6E6",
+  red: "#E80000",
+  lightGreen: "#D9ECD9",
+  green: "#0C9610",
 }
 
 export const shadows = {
