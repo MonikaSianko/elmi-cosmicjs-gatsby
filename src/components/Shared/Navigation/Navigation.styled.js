@@ -8,7 +8,7 @@ import {
   radius,
   spaces,
 } from "../../../constants/contants"
-import { card, scaleUp } from "../Styles/Generic.styles"
+import { card } from "../Styles/Generic.styles"
 
 export const StyledNavigationWrapper = styled.div`
   padding: ${props => (props.theme === "grey" ? "85px 0" : "125px 0 85px 0")};
@@ -32,7 +32,7 @@ export const Card = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: ${spaces.l} ${spaces.xl};
+  padding: ${spaces.xxl};
   margin: 0 ${spaces.xl};
   width: 15em;
   text-align: center;
@@ -49,12 +49,8 @@ export const Card = styled.div`
     padding: ${spaces.s} 0;
   }
   img {
-    width: 8em;
-    height: 8em;
-    @media ${breakpointsMax.m} {
-      width: 6em;
-      height: 6em;
-    }
+    width: 9em;
+    height: 9em;
   }
   .with-text {
     border: ${borders.blue};
