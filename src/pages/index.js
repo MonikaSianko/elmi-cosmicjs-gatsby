@@ -48,7 +48,7 @@ export default function HomePage({ data }) {
               slidesToShow: isMobile ? 2 : 3,
               slidesToScroll: isMobile ? 2 : 3,
               autoplay: true,
-              speed: 400,
+              speed: 200,
             }}
             className="industries"
             withTitle
@@ -60,10 +60,10 @@ export default function HomePage({ data }) {
           settings={{
             dots: false,
             infinite: true,
-            slidesToShow: isTablet ? 2 : 3,
-            slidesToScroll: isTablet ? 2 : 3,
+            slidesToShow: isMobile ? 1 : 3,
+            slidesToScroll: isMobile ? 1 : 3,
             autoplay: true,
-            speed: 400,
+            speed: 200,
           }}
           content={partnersData}
           className="partners"
