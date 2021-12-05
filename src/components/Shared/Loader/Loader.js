@@ -1,12 +1,12 @@
 import React from "react"
 import styled from "styled-components"
-import { fadeOut, spin } from "../Styles/Keyframes.styles"
+import { fadeIn, spin } from "../Styles/Keyframes.styles"
 import { colors } from "../../../constants/contants"
 
-const Loader = ({ classNames }) => {
+const Loader = () => {
   return (
     <StyledLoader>
-      <div className={classNames}></div>
+      <div className="loader"></div>
     </StyledLoader>
   )
 }
@@ -27,9 +27,6 @@ const StyledLoader = styled.div`
     border-radius: 50%;
     width: 120px;
     height: 120px;
-    animation: ${spin} 2s linear infinite;
-  }
-  .hide-loader {
-    animation: ${fadeOut} 1s cubic-bezier(0.5, 0.46, 0.45, 0.94) forwards;
+    animation: ${spin} 2s linear infinite, ${fadeIn} 2s ease-in;
   }
 `
