@@ -14,14 +14,15 @@ export const StyledSlickSlider = styled.section`
     align-items: center;
     @media ${breakpointsMax.l} {
       height: 100px;
+      margin-bottom: ${spaces.xl};
     }
     .slick-slide {
       max-height: 100px;
       img {
         max-height: 80px;
         object-fit: contain;
-        @media ${breakpointsMax.l} {
-          max-height: 50px;
+        @media ${breakpointsMax.m} {
+          width: 100%;
         }
       }
     }

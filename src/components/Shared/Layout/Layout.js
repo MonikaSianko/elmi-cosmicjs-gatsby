@@ -10,14 +10,14 @@ const Layout = ({ children, menuLinks, logo, policy }) => {
     if (isLoading) {
       setTimeout(() => {
         setIsLoading(false)
-      }, 2000)
+      }, 1000)
     }
   }, [isLoading])
 
   return (
     <>
       {isLoading ? (
-        <Loader classNames={isLoading ? "loader" : "hide-loader"} />
+        <Loader />
       ) : (
         <>
           <Header menuLinks={menuLinks} logo={logo} />

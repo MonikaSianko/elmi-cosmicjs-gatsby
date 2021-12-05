@@ -1,5 +1,5 @@
 import { graphql } from "gatsby"
-import React, { memo, useEffect } from "react"
+import React, { memo } from "react"
 import BoxAbout from "../components/Boxes/BoxAbout/BoxAbout"
 import Layout from "../components/Shared/Layout/Layout"
 
